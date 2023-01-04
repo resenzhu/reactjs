@@ -1,0 +1,474 @@
+.conversation
+{
+  background-color: #F6F8FB;
+  flex: 1;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar
+  {
+    width: 0.5rem
+  }
+
+  &::-webkit-scrollbar-track
+  {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: #C5C5C5;
+  }
+
+  &::-webkit-scrollbar-thumb:hover
+  {
+    background-color: #A8A8A8;
+  }
+
+  &::-webkit-scrollbar-thumb:active
+  {
+    background-color: #787878;
+  }
+}
+
+.chat
+{
+  white-space: pre-wrap;
+
+  &:last-of-type
+  {
+    margin-bottom: 0;
+  }
+
+  .firstPerson,
+  .thirdPerson
+  {
+    display: flex;
+
+    .box
+    {
+      box-shadow: 0 0.063rem 0.188rem #C1C1C1;
+      padding: 0.625rem;
+      word-break: break-word;
+
+      .header
+      {
+        .username
+        {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .menu
+    {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .firstPerson
+  {
+    flex-direction: row-reverse;
+
+    .box
+    {
+      background-color: #4A98E1;
+      border-radius: 0.625rem 0 0.625rem 0.625rem;
+      color: #FFFFFF;
+
+      .content
+      {
+        .time
+        {
+          color: #EEEEEE;
+          text-align: right;
+        }
+      }
+    }
+
+    .menu
+    {
+      padding-right: 0.625rem;
+
+      .sending
+      {
+        svg
+        {
+          color: #979797;
+        }
+      }
+
+      .pending
+      {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        width: 2.188rem;
+
+        button
+        {
+          background-color: transparent;
+          border: none;
+          padding: 0;
+
+          svg
+          {
+            color: #979797;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .thirdPerson
+  {
+    flex-direction: row;
+
+    .box
+    {
+      background-color: #FFFFFF;
+      border-radius: 0 0.625rem 0.625rem 0.625rem;
+      color: #333333;
+
+      .content
+      {
+        .time
+        {
+          color: #979797;
+          text-align: left;
+        }
+      }
+    }
+
+    .menu
+    {
+      padding-left: 0.625rem;
+    }
+  }
+}
+
+.info
+{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  white-space: pre-wrap;
+
+  &:last-of-type
+  {
+    margin-bottom: 0;
+  }
+
+  .box
+  {
+    align-items: baseline;
+    background-color: #FFFFFF;
+    border: #EDEDED 0.125rem solid;
+    border-radius: 0.625rem;
+    color: #A9A9A9;
+    display: flex;
+
+    .message
+    {
+      font-style: italic;
+    }
+  }
+}
+
+@media (max-width: 35.938rem)
+{
+  .conversation
+  {
+    padding: 0.625rem;
+  }
+
+  .chat
+  {
+    font-size: 0.813rem;
+    margin-bottom: 0.5rem;
+
+    .firstPerson,
+    .thirdPerson
+    {
+      .box
+      {
+        max-width: 70%;
+
+        .header
+        {
+          margin-bottom: 0.25rem;
+        }
+
+        .content
+        {
+          .message
+          {
+            line-height: 1.125rem;
+            margin-bottom: 0.25rem;
+          }
+
+          .time
+          {
+            font-size: 0.688rem;
+          }
+        }
+      }
+    }
+  }
+
+  .info
+  {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+
+    .box
+    {
+      padding: 0.5rem 0.375rem;
+
+      .time
+      {
+        font-size: 0.625rem;
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.938rem)
+{
+  .conversation
+  {
+    padding: 0.688rem;
+  }
+
+  .chat
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+
+    .firstPerson,
+    .thirdPerson
+    {
+      .box
+      {
+        max-width: 21.25rem;
+
+        .header
+        {
+          margin-bottom: 0.313rem;
+        }
+
+        .content
+        {
+          .message
+          {
+            line-height: 1.25rem;
+            margin-bottom: 0.313rem;
+          }
+
+          .time
+          {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+
+  .info
+  {
+    font-size: 0.813rem;
+    margin-bottom: 0.625rem;
+
+    .box
+    {
+      padding: 0.5rem 0.438rem;
+
+      .time
+      {
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 61.938rem)
+{
+  .conversation
+  {
+    padding: 0.875rem;
+  }
+
+  .chat
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .firstPerson,
+    .thirdPerson
+    {
+      .box
+      {
+        max-width: 25rem;
+
+        .header
+        {
+          margin-bottom: 0.375rem;
+        }
+
+        .content
+        {
+          .message
+          {
+            line-height: 1.25rem;
+            margin-bottom: 0.375rem;
+          }
+
+          .time
+          {
+            font-size: 0.813rem;
+          }
+        }
+      }
+    }
+  }
+
+  .info
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .box
+    {
+      padding: 0.5rem;
+
+      .time
+      {
+        font-size: 0.813rem;
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 62rem) and (max-width: 74.938rem)
+{
+  .conversation
+  {
+    padding: 1.063rem;
+  }
+
+  .chat
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .firstPerson,
+    .thirdPerson
+    {
+      .box
+      {
+        max-width: 25rem;
+
+        .header
+        {
+          margin-bottom: 0.375rem;
+        }
+
+        .content
+        {
+          .message
+          {
+            line-height: 1.25rem;
+            margin-bottom: 0.375rem;
+          }
+
+          .time
+          {
+            font-size: 0.813rem;
+          }
+        }
+      }
+    }
+  }
+
+  .info
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .box
+    {
+      padding: 0.5rem 0.563rem;
+
+      .time
+      {
+        font-size: 0.813rem;
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 75rem)
+{
+  .conversation
+  {
+    padding: 1.25rem;
+  }
+
+  .chat
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .firstPerson,
+    .thirdPerson
+    {
+      .box
+      {
+        max-width: 25rem;
+
+        .header
+        {
+          margin-bottom: 0.375rem;
+        }
+
+        .content
+        {
+          .message
+          {
+            line-height: 1.25rem;
+            margin-bottom: 0.375rem;
+          }
+
+          .time
+          {
+            font-size: 0.813rem;
+          }
+        }
+      }
+    }
+  }
+
+  .info
+  {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+
+    .box
+    {
+      padding: 0.5rem 0.625rem;
+
+      .time
+      {
+        font-size: 0.813rem;
+        margin-left: 0.375rem;
+      }
+    }
+  }
+}

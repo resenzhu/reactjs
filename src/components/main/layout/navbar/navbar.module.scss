@@ -1,0 +1,306 @@
+.navbar
+{
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom: #E3E3E3 0.125rem solid;
+  box-sizing: border-box;
+  display: flex;
+  height: 3.75rem;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .brand
+  {
+    a
+    {
+      align-items: center;
+      color: #333333;
+      display: flex;
+      text-decoration: none;
+
+      img
+      {
+        border-radius: 0.313rem;
+      }
+
+      span
+      {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .nav
+  {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .language
+    {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      img
+      {
+        box-shadow: 0.063rem 0.063rem 0.125rem #C1C1C1;
+        cursor: pointer;
+        height: 1.641rem !important;
+        width: initial !important;
+      }
+
+      .list
+      {
+        background-color: #FFFFFF;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.025rem 0.063rem #616161;
+        display: flex;
+        flex-direction: column;
+        margin: 9.375rem 7.5rem 0 0;
+        padding: 0.5rem 0;
+        position: absolute;
+        width: 10rem;
+
+        .item
+        {
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          transition: 0.2s;
+
+          &:hover
+          {
+            background-color: #3778C2;
+            color: #FFFFFF;
+          }
+
+          &:active
+          {
+            background-color: #2F69A8;
+          }
+        }
+      }
+    }
+
+    .menu
+    {
+      .toggler
+      {
+        color: #565656;
+        cursor: pointer;
+      }
+
+      .list
+      {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .item
+        {
+          a
+          {
+            color: #333333;
+            font-weight: 600;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 35.938rem)
+{
+  .navbar
+  {
+    padding: 0 0.75rem;
+
+    .brand
+    {
+      a
+      {
+        span
+        {
+          display: none;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: 5rem;
+
+      .menu
+      {
+        .toggler
+        {
+          svg
+          {
+            font-size: 2.188rem;
+          }
+        }
+
+        .list
+        {
+          background-color: #FFFFFF;
+          flex-direction: column;
+          left: 0;
+          margin-top: 0.75rem;
+          position: absolute;
+          width: 100%;
+
+          .item
+          {
+            border-top: #EEEEEE 0.125rem solid;
+            text-align: right;
+            width: inherit;
+
+            &:last-of-type
+            {
+              border-bottom: #EEEEEE 0.125rem solid;
+            }
+
+            a
+            {
+              display: block;
+              font-weight: 500;
+              padding: 1rem 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.938rem)
+{
+  .navbar
+  {
+    padding: 0 1.125rem;
+
+    .brand
+    {
+      a
+      {
+        span
+        {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: 21.25rem;
+
+      .menu
+      {
+        .list
+        {
+          width: 16.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 61.938rem)
+{
+  .navbar
+  {
+    padding: 0 1.5rem;
+
+    .brand
+    {
+      a
+      {
+        span
+        {
+          margin-left: 0.625rem;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: 23.125rem;
+
+      .menu
+      {
+        .list
+        {
+          width: 17.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 62rem) and (max-width: 74.938rem)
+{
+  .navbar
+  {
+    padding: 0 3rem;
+
+    .brand
+    {
+      a
+      {
+        span
+        {
+          margin-left: 0.875rem;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: 24.063rem;
+
+      .menu
+      {
+        .list
+        {
+          width: 18rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 75rem)
+{
+  .navbar
+  {
+    padding: 0 6rem;
+
+    .brand
+    {
+      a
+      {
+        span
+        {
+          margin-left: 0.875rem;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: 24.063rem;
+
+      .menu
+      {
+        .list
+        {
+          width: 18rem;
+        }
+      }
+    }
+  }
+}

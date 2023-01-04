@@ -1,0 +1,5 @@
+.env
+.netlify
+build
+node_modules
+public/sitemap.xml

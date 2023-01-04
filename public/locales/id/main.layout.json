@@ -1,0 +1,28 @@
+{
+  "navbar":
+  {
+    "brand":
+    {
+      "title": "RESEN",
+      "label":
+      {
+        "logo": "logo"
+      }
+    },
+    "language":
+    {
+      "en": "Bahasa Inggris",
+      "id": "Bahasa Indonesia",
+      "label":
+      {
+        "flag": "bahasa"
+      }
+    },
+    "menu":
+    {
+      "home": "BERANDA",
+      "projects": "PROYEK",
+      "contact": "KONTAK"
+    }
+  }
+}

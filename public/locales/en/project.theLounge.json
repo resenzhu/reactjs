@@ -1,0 +1,40 @@
+{
+  "seo":
+  {
+    "title": "The Lounge | Resen",
+    "description": "A place where you can relax, talk, chat, and hang out together with friends and communities."
+  },
+  "header":
+  {
+    "title": "The Lounge",
+    "subtitle":
+    {
+      "offline": "offline",
+      "joining": "joining...",
+      "joined":
+      {
+        "single": "{{count}} user joined",
+        "multiple": "{{count}} users joined"
+      }
+    }
+  },
+  "conversation":
+  {
+    "info":
+    {
+      "join":
+      {
+        "firstPerson": "You joined the conversation.",
+        "thirdPerson": "{{name}} joined the conversation."
+      },
+      "leave": "{{name}} left the conversation."
+    }
+  },
+  "sender":
+  {
+    "message":
+    {
+      "placeholder": "Write something"
+    }
+  }
+}

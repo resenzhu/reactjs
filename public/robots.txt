@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Disallow:
+
+# Host
+Host: https://resen-reactjs.netlify.app
+
+# Sitemaps
+Sitemap: https://resen-reactjs.netlify.app/sitemap.xml

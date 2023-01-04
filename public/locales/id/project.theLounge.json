@@ -1,0 +1,40 @@
+{
+  "seo":
+  {
+    "title": "The Lounge | Resen",
+    "description": "Tempat di mana Anda dapat bersantai, mengobrol, dan berkumpul bersama teman dan komunitas."
+  },
+  "header":
+  {
+    "title": "The Lounge",
+    "subtitle":
+    {
+      "offline": "offline",
+      "joining": "bergabung...",
+      "joined":
+      {
+        "single": "{{count}} pengguna bergabung",
+        "multiple": "{{count}} pengguna bergabung"
+      }
+    }
+  },
+  "conversation":
+  {
+    "info":
+    {
+      "join":
+      {
+        "firstPerson": "Anda bergabung dalam percakapan.",
+        "thirdPerson": "{{name}} bergabung dalam percakapan."
+      },
+      "leave": "{{name}} meninggalkan percakapan."
+    }
+  },
+  "sender":
+  {
+    "message":
+    {
+      "placeholder": "Tulis sesuatu"
+    }
+  }
+}

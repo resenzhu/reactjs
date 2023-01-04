@@ -1,0 +1,35 @@
+.background
+{
+  background-color: #F2F6F9;
+  display: flex;
+  height: calc(100vh - 3.75rem);
+  padding-top: 3.75rem;
+
+  .app
+  {
+    box-shadow: 0 0.125rem 0.625rem #C1C1C1;
+    display: flex;
+    flex-direction: column;
+    margin: 1.25rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 35.938rem)
+{
+  .background
+  {
+    .app
+    {
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.938rem) {}
+
+@media (min-width: 48rem) and (max-width: 61.938rem) {}
+
+@media (min-width: 62rem) and (max-width: 74.938rem) {}
+
+@media (min-width: 75rem) {}

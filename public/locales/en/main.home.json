@@ -1,0 +1,88 @@
+{
+  "seo":
+  {
+    "title": "Resen | Full Stack Developer",
+    "description": "An enthusiastic full stack developer with over 5 years of experience in software development especially web using ReactJS, NodeJS, NextJS, and others."
+  },
+  "hero":
+  {
+    "name": "Hello, I am <span>Resen</span>",
+    "specialty": "I am a <specialty />",
+    "work": "VIEW MY WORK",
+    "label":
+    {
+      "photo": "the author photo"
+    }
+  },
+  "projects":
+  {
+    "headline": "PROJECTS",
+    "list":
+    {
+      "theLounge":
+      {
+        "name": "THE LOUNGE",
+        "slogan": "A Place to Talk"
+      }
+    }
+  },
+  "contact":
+  {
+    "headline": "CONTACT",
+    "form":
+    {
+      "name":
+      {
+        "placeholder": "Name",
+        "error":
+        {
+          "empty": "Please enter your name.",
+          "tooShort": "Name is too short.",
+          "tooLong": "Name is too long.",
+          "invalid": "Name is invalid."
+        }
+      },
+      "email":
+      {
+        "placeholder": "Email",
+        "error":
+        {
+          "empty": "Please enter your email.",
+          "tooShort": "Email is too short.",
+          "tooLong": "Email is too long.",
+          "invalid": "Email is invalid."
+        }
+      },
+      "message":
+      {
+        "placeholder": "Message",
+        "error":
+        {
+          "empty": "Please enter your message.",
+          "tooShort": "Message is too short.",
+          "tooLong": "Message is too long."
+        }
+      },
+      "phone":
+      {
+        "placeholder": "Phone"
+      },
+      "error":
+      {
+        "tooFast": "You are submitting too fast.",
+        "offline": "There is no Internet connection.",
+        "server": "Server error. Please try again later."
+      },
+      "success": "Your message has been sent!",
+      "submit": "SUBMIT"
+    }
+  },
+  "footer":
+  {
+    "copyright": "RESEN <copyright />",
+    "label":
+    {
+      "scrollToTop": "scroll to top"
+    }
+  }
+}

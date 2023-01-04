@@ -1,0 +1,651 @@
+.hero
+{
+  padding-top: 3.75rem;
+
+  .content
+  {
+    align-items: center;
+    background-image: linear-gradient(#252934CC, #252934CC), url('./../../../assets/images/main/home/hero.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.75rem);
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+
+    .profile
+    {
+      img
+      {
+        border: #FFFFFF 0.313rem solid;
+        border-radius: 50%;
+      }
+    }
+
+    .name
+    {
+      margin-bottom: 0.313rem;
+
+      span
+      {
+        color: #F26D52;
+        font-weight: 500;
+      }
+    }
+
+    .specialty
+    {
+      :global(.Typewriter)
+      {
+        color: #FFE056;
+        display: inline;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.projects
+{
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 3.75rem);
+
+  .headline
+  {
+    text-align: center;
+  }
+
+  .list
+  {
+    flex: 1;
+    margin: 0 auto;
+    text-align: center;
+
+    div[class^='project_project_']
+    {
+      &:last-of-type
+      {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.contact
+{
+  background-color: #24323D;
+  display: flex;
+  flex-direction: column;
+
+  .headline
+  {
+    text-align: center;
+
+    div[class^='headline_headline_']
+    {
+      color: #F6F6F6;
+
+      &:before
+      {
+        border-bottom: #F6F6F6 0.25rem solid;
+      }
+    }
+  }
+
+  .form
+  {
+    flex: 1;
+
+    form
+    {
+      height: 100%;
+      width: 100%;
+
+      input,
+      textarea
+      {
+        background-color: #24323D;
+        border: #55656E 0.125rem solid;
+        caret-color: #EBEBEB;
+        color: #EBEBEB;
+        margin-bottom: 1rem;
+      }
+
+      textarea
+      {
+        flex: 1;
+      }
+
+      input[name='phone']
+      {
+        display: none;
+      }
+
+      div[class^='form_error_'],
+      div[class^='form_success_']
+      {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+.footer
+{
+  background-color: #1D272E;
+
+  .scrollback
+  {
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+
+    button
+    {
+      background-color: #E71E72;
+      border: none;
+      padding: 0.75rem;
+      transition: 0.2s;
+
+      &:hover
+      {
+        background-color: #F73183;
+      }
+    }
+  }
+
+  .social
+  {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    a[class^='social_social_']
+    {
+      background-color: #24323D;
+
+      &:hover
+      {
+        background-color: #3778C2;
+      }
+    }
+  }
+
+  .copyright
+  {
+    color: #F6F6F6;
+    font-size: 0.875rem;
+    font-weight: 200;
+    text-align: center;
+  }
+}
+
+@media (max-width: 35.938rem)
+{
+  .hero
+  {
+    font-size: 1.25rem;
+
+    .content
+    {
+      min-height: 23.75rem;
+
+      .profile
+      {
+        margin-bottom: 1.25rem;
+      }
+
+      .work
+      {
+        margin-top: 1.875rem;
+      }
+    }
+  }
+
+  .projects
+  {
+    .headline
+    {
+      margin: 1.75rem 0;
+    }
+
+    .list
+    {
+      margin-bottom: 1.75rem;
+      width: 92%;
+
+      div[class^='project_project_']
+      {
+        margin-bottom: 0.625rem;
+      }
+    }
+  }
+
+  .contact
+  {
+    min-height: calc(100vh - 3.75rem - calc(3.125rem / 2));
+
+    .headline
+    {
+      margin: 1.75rem 0;
+    }
+
+    .form
+    {
+      margin: 0 auto calc(1.75rem + calc(3.125rem / 2)) auto;
+      width: 92%;
+
+      form
+      {
+        textarea
+        {
+          min-height: 5rem;
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    .scrollback
+    {
+      margin: calc(-3.125rem / 2) auto 0 auto;
+
+      button
+      {
+        font-size: 1.375rem;
+        height: 3.125rem;
+      }
+    }
+
+    .social
+    {
+      padding: calc(calc(3.125rem / 2) * 2) 0 calc(calc(3.125rem / 2) * 1.5) 0;
+      width: 15.625rem;
+    }
+
+    .copyright
+    {
+      padding-bottom: 0.938rem;
+    }
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.938rem)
+{
+  .hero
+  {
+    font-size: 1.5rem;
+
+    .content
+    {
+      min-height: 24.375rem;
+
+      .profile
+      {
+        margin-bottom: 1.5rem;
+      }
+
+      .work
+      {
+        margin-top: 2.188rem;
+      }
+    }
+  }
+
+  .projects
+  {
+    .headline
+    {
+      margin: 2.25rem 0;
+    }
+
+    .list
+    {
+      margin-bottom: 2.25rem;
+      width: 34.25rem;
+
+      div[class^='project_project_']
+      {
+        display: inline-block;
+      }
+    }
+  }
+
+  .contact
+  {
+    min-height: calc(100vh - 3.75rem - calc(3.75rem / 2));
+
+    .headline
+    {
+      margin: 2.25rem 0;
+    }
+
+    .form
+    {
+      margin: 0 auto calc(2.25rem + calc(3.75rem / 2)) auto;
+      width: 25rem;
+
+      form
+      {
+        height: 80%;
+
+        textarea
+        {
+          min-height: 5.625rem;
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    .scrollback
+    {
+      margin: calc(-3.75rem / 2) auto 0 auto;
+
+      button
+      {
+        font-size: 1.375rem;
+        height: 3.75rem;
+      }
+    }
+
+    .social
+    {
+      padding: calc(calc(3.75rem / 2) * 2) 0 calc(calc(3.75rem / 2) * 1.5) 0;
+      width: 17.5rem;
+    }
+
+    .copyright
+    {
+      padding-bottom: 1.25rem;
+    }
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 61.938rem)
+{
+  .hero
+  {
+    font-size: 1.75rem;
+
+    .content
+    {
+      min-height: 27.5rem;
+
+      .profile
+      {
+        margin-bottom: 1.75rem;
+      }
+
+      .work
+      {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  .projects
+  {
+    .headline
+    {
+      margin: 2.75rem 0;
+    }
+
+    .list
+    {
+      margin-bottom: 2.75rem;
+      width: 44rem;
+
+      div[class^='project_project_']
+      {
+        display: inline-block;
+      }
+    }
+  }
+
+  .contact
+  {
+    min-height: calc(100vh - 3.75rem - calc(3.75rem / 2));
+
+    .headline
+    {
+      margin: 2.75rem 0;
+    }
+
+    .form
+    {
+      margin: 0 auto calc(2.75rem + calc(3.75rem / 2)) auto;
+      width: 28.125rem;
+
+      form
+      {
+        height: 80%;
+
+        textarea
+        {
+          min-height: 6.25rem;
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    .scrollback
+    {
+      margin: calc(-3.75rem / 2) auto 0 auto;
+
+      button
+      {
+        font-size: 1.375rem;
+        height: 3.75rem;
+      }
+    }
+
+    .social
+    {
+      padding: calc(calc(3.75rem / 2) * 2) 0 calc(calc(3.75rem / 2) * 1.5) 0;
+      width: 17.5rem;
+    }
+
+    .copyright
+    {
+      padding-bottom: 1.25rem;
+    }
+  }
+}
+
+@media (min-width: 62rem) and (max-width: 74.938rem)
+{
+  .hero
+  {
+    font-size: 2.125rem;
+
+    .content
+    {
+      min-height: 27.5rem;
+
+      .profile
+      {
+        margin-bottom: 1.875rem;
+      }
+
+      .work
+      {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  .projects
+  {
+    .headline
+    {
+      margin: 3.25rem 0;
+    }
+
+    .list
+    {
+      margin-bottom: 3.25rem;
+      width: 56.625rem;
+
+      div[class^='project_project_']
+      {
+        display: inline-block;
+      }
+    }
+  }
+
+  .contact
+  {
+    min-height: calc(100vh - 3.75rem - calc(3.75rem / 2));
+
+    .headline
+    {
+      margin: 3.25rem 0;
+    }
+
+    .form
+    {
+      margin: 0 auto calc(3.25rem + calc(3.75rem / 2)) auto;
+      width: 28.125rem;
+
+      form
+      {
+        height: 90%;
+
+        textarea
+        {
+          min-height: 6.25rem;
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    .scrollback
+    {
+      margin: calc(-3.75rem / 2) auto 0 auto;
+
+      button
+      {
+        font-size: 1.375rem;
+        height: 3.75rem;
+      }
+    }
+
+    .social
+    {
+      padding: calc(calc(3.75rem / 2) * 2) 0 calc(calc(3.75rem / 2) * 1.5) 0;
+      width: 17.5rem;
+    }
+
+    .copyright
+    {
+      padding-bottom: 1.25rem;
+    }
+  }
+}
+
+@media (min-width: 75rem)
+{
+  .hero
+  {
+    font-size: 2.25rem;
+
+    .content
+    {
+      min-height: 27.5rem;
+
+      .profile
+      {
+        margin-bottom: 1.875rem;
+      }
+
+      .work
+      {
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  .projects
+  {
+    .headline
+    {
+      margin: 3.75rem 0;
+    }
+
+    .list
+    {
+      margin-bottom: 3.75rem;
+      width: 75rem;
+
+      div[class^='project_project_']
+      {
+        display: inline-block;
+      }
+    }
+  }
+
+  .contact
+  {
+    min-height: calc(100vh - 3.75rem - calc(4.375rem / 2));
+
+    .headline
+    {
+      margin: 3.75rem 0;
+    }
+
+    .form
+    {
+      margin: 0 auto calc(3.75rem + calc(4.375rem / 2)) auto;
+      width: 28.125rem;
+
+      form
+      {
+        height: 90%;
+
+        textarea
+        {
+          min-height: 6.25rem;
+        }
+      }
+    }
+  }
+
+  .footer
+  {
+    .scrollback
+    {
+      margin: calc(-4.375rem / 2) auto 0 auto;
+
+      button
+      {
+        font-size: 1.563rem;
+        height: 4.375rem;
+      }
+    }
+
+    .social
+    {
+      padding: calc(calc(4.375rem / 2) * 2) 0 calc(calc(4.375rem / 2) * 1.5) 0;
+      width: 17.5rem;
+    }
+
+    .copyright
+    {
+      padding-bottom: 1.25rem;
+    }
+  }
+}

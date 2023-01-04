@@ -1,0 +1,39 @@
+.preloader
+{
+  align-items: center;
+  background-color: #101010;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+
+  > img
+  {
+    animation: preloader 4s linear infinite;
+    width: 7.5rem;
+  }
+}
+
+@keyframes preloader
+{
+  from
+  {
+    transform: rotate(0deg);
+  }
+
+  to
+  {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 35.938rem) {}
+
+@media (min-width: 36rem) and (max-width: 47.938rem) {}
+
+@media (min-width: 48rem) and (max-width: 61.938rem) {}
+
+@media (min-width: 62rem) and (max-width: 74.938rem) {}
+
+@media (min-width: 75rem) {}

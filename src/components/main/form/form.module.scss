@@ -1,0 +1,168 @@
+.form
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.error
+{
+  background-color: #CB4242;
+  color: #FFFFFF;
+}
+
+.success
+{
+  background-color: #408140;
+  color: #FFFFFF;
+}
+
+.input,
+.textarea
+{
+  background-color: #FFFFFF;
+  border: #E3E3E3 0.125rem solid;
+  caret-color: #333333;
+  color: #333333;
+
+  &:focus
+  {
+    outline: none;
+  }
+
+  &::placeholder
+  {
+    color: #AEAEAE;
+  }
+}
+
+.textarea
+{
+  line-height: 1.25rem;
+  resize: none;
+
+  &::-webkit-scrollbar
+  {
+    width: 0.5rem
+  }
+
+  &::-webkit-scrollbar-track
+  {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    background-color: #C5C5C5;
+    border-radius: 0.625rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover
+  {
+    background-color: #A8A8A8;
+  }
+
+  &::-webkit-scrollbar-thumb:active
+  {
+    background-color: #787878;
+  }
+}
+
+@media (max-width: 35.938rem)
+{
+  .form
+  {
+    font-size: 0.875rem;
+  }
+
+  .error,
+  .success
+  {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .input,
+  .textarea
+  {
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 36rem) and (max-width: 47.938rem)
+{
+  .form
+  {
+    font-size: 0.938rem;
+  }
+
+  .error,
+  .success
+  {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .input,
+  .textarea
+  {
+    padding: 0.625rem;
+  }
+}
+
+@media (min-width: 48rem) and (max-width: 61.938rem)
+{
+  .form
+  {
+    font-size: 1rem;
+  }
+
+  .error,
+  .success
+  {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .input,
+  .textarea
+  {
+    padding: 0.625rem;
+  }
+}
+
+@media (min-width: 62rem) and (max-width: 74.938rem)
+{
+  .form
+  {
+    font-size: 1rem;
+  }
+
+  .error,
+  .success
+  {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .input,
+  .textarea
+  {
+    padding: 0.625rem;
+  }
+}
+
+@media (min-width: 75rem)
+{
+  .form
+  {
+    font-size: 1rem;
+  }
+
+  .error,
+  .success
+  {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .input,
+  .textarea
+  {
+    padding: 0.625rem;
+  }
+}

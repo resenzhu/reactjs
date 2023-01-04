@@ -1,0 +1,88 @@
+{
+  "seo":
+  {
+    "title": "Resen | Full Stack Developer",
+    "description": "Pengembang full stack yang antusias dengan pengalaman lebih dari 5 tahun dalam pengembangan perangkat lunak terutama web menggunakan ReactJS dan lainnya."
+  },
+  "hero":
+  {
+    "name": "Halo, Saya <span>Resen</span>",
+    "specialty": "Saya adalah <specialty />",
+    "work": "LIHAT KARYA SAYA",
+    "label":
+    {
+      "photo": "foto penulis"
+    }
+  },
+  "projects":
+  {
+    "headline": "PROYEK",
+    "list":
+    {
+      "theLounge":
+      {
+        "name": "THE LOUNGE",
+        "slogan": "Tempat Ngobrol Santai"
+      }
+    }
+  },
+  "contact":
+  {
+    "headline": "KONTAK",
+    "form":
+    {
+      "name":
+      {
+        "placeholder": "Nama",
+        "error":
+        {
+          "empty": "Silakan masukkan nama Anda.",
+          "tooShort": "Nama terlalu pendek.",
+          "tooLong": "Nama terlalu panjang.",
+          "invalid": "Nama tidak valid."
+        }
+      },
+      "email":
+      {
+        "placeholder": "Email",
+        "error":
+        {
+          "empty": "Silakan masukkan email Anda.",
+          "tooShort": "Email terlalu pendek.",
+          "tooLong": "Email terlalu panjang.",
+          "invalid": "Email tidak valid."
+        }
+      },
+      "message":
+      {
+        "placeholder": "Pesan",
+        "error":
+        {
+          "empty": "Silakan masukkan pesan Anda.",
+          "tooShort": "Pesan terlalu pendek.",
+          "tooLong": "Pesan terlalu panjang."
+        }
+      },
+      "phone":
+      {
+        "placeholder": "Telepon"
+      },
+      "error":
+      {
+        "tooFast": "Anda mengirimkan terlalu cepat.",
+        "offline": "Tidak ada koneksi Internet.",
+        "server": "Server error. Silakan coba lagi nanti."
+      },
+      "success": "Pesan Anda telah dikirim!",
+      "submit": "KIRIM"
+    }
+  },
+  "footer":
+  {
+    "copyright": "RESEN <copyright />",
+    "label":
+    {
+      "scrollToTop": "gulir ke atas"
+    }
+  }
+}
