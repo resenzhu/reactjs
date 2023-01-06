@@ -50,6 +50,23 @@
       padding: 0.625rem;
       word-break: break-word;
 
+      .content
+      {
+        .message
+        {
+          a
+          {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover
+            {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+
       .header
       {
         .username
