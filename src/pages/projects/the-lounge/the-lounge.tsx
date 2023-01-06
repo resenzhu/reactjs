@@ -1,9 +1,10 @@
-import {ChangeEvent, MouseEvent, useEffect, useRef, useState} from 'react';
+import {ChangeEvent, HTMLAttributeAnchorTarget, MouseEvent, useEffect, useRef, useState} from 'react';
 import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
 import {Conversation as Convo, Header, Sender} from './../../../components/projects/the-lounge/index';
 import {DateTime} from 'luxon';
 import {Seo} from './../../../components/main';
 import decodeJwt from 'jwt-decode';
+import linkifyHtml from 'linkify-html';
 import {nanoid} from 'nanoid';
 import styles from './the-lounge.module.scss';
 import {theLoungeSocket} from './../../../utils/socket';
@@ -11,6 +12,13 @@ import {useIdleTimer} from 'react-idle-timer';
 import {useLayout} from './../../../hooks/main/index';
 import {useTheLounge} from './../../../hooks/projects/index';
 import {useTranslation} from './../../../hooks/main';
+
+type LinkifyHTMLOptions =
+{
+  defaultProtocol: 'http' | 'https' | 'ftp' | 'ftps',
+  target: HTMLAttributeAnchorTarget,
+  rel: string
+};
 
 type IntDecodedToken =
 {
@@ -135,6 +143,13 @@ const TheLounge = (): JSX.Element =>
   const usersRef = useRef<User[]>(users);
 
   const disableSender = !online || joining || userMessage.trim().length === 0;
+
+  const linkifyHTMLOptions: LinkifyHTMLOptions =
+  {
+    defaultProtocol: 'https',
+    target: '_blank',
+    rel: 'noopener noreferrer'
+  };
 
   const getMessages = (token: string): Promise<ResMessage[]> =>
   (
@@ -820,7 +835,7 @@ const TheLounge = (): JSX.Element =>
 
                     const username = users.find((existingUser): boolean => existingUser.id === chat.userId)?.name ?? chat.userId;
 
-                    const message = chat.message.replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
+                    const message = linkifyHtml(chat.message, linkifyHTMLOptions).replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
 
                     const time = DateTime.fromISO(chat.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
 

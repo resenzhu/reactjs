@@ -154,7 +154,7 @@ const Chat = ({type, header, username, message, time, status, onretry, ondelete}
           <div className={styles.content}>
             <div
               className={styles.message}
-              dangerouslySetInnerHTML={{__html: sanitize(message)}}>
+              dangerouslySetInnerHTML={{__html: sanitize(message, {ADD_ATTR: ['target']})}}>
             </div>
             <div className={styles.time}>
               {time}
