@@ -1,6 +1,6 @@
 import {ChangeEvent, HTMLAttributeAnchorTarget, MouseEvent, useEffect, useRef, useState} from 'react';
 import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
-import {Conversation as Convo, Header, Sender, Sidebar} from './../../../components/projects/the-lounge/index';
+import {Conversation as Convo, Header, Sender, Sidebar, User as Usr} from './../../../components/projects/the-lounge/index';
 import {DateTime} from 'luxon';
 import {Seo} from './../../../components/main';
 import decodeJwt from 'jwt-decode';
@@ -800,7 +800,7 @@ const TheLounge = (): JSX.Element =>
                 {
                   const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
 
-                  const elements =
+                  const elements: JSX.Element[] =
                   [
                     <Convo.Info
                       key={existingConversation.date}
@@ -898,7 +898,19 @@ const TheLounge = (): JSX.Element =>
               }
             </Convo>
             <Sidebar>
-              USERS
+              {
+                users.map((existingUser): JSX.Element[] =>
+                {
+                  const elements: JSX.Element[] = [];
+
+                  if (existingUser.status === 'online' || existingUser.status === 'away')
+                  {
+                    elements.push(<Usr name={existingUser.name} status={existingUser.status} />);
+                  }
+
+                  return elements;
+                })
+              }
             </Sidebar>
           </div>
           <Sender
