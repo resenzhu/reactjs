@@ -1,3 +1,13 @@
+.user
+{
+  padding: 0.625rem;
+
+  .name
+  {
+    font-weight: 500;
+  }
+}
+
 @media (max-width: 35.938rem) {}
 
 @media (min-width: 36rem) and (max-width: 47.938rem) {}
