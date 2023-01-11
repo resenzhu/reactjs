@@ -16,7 +16,27 @@
     .body
     {
       display: flex;
-      height: 100vh;
+      flex: 1;
+      height: 0;
+
+      div[class^='sidebar_sidebar_']
+      {
+        min-width: 15.625rem;
+        overflow-y: auto;
+
+        div[class^='user_user_']
+        {
+          &:first-of-type
+          {
+            margin-top: 0.5rem;
+          }
+
+          &:last-of-type
+          {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
     }
   }
 }
