@@ -15,7 +15,7 @@ const User = ({name, status}: User): JSX.Element =>
       {name}
     </div>
     <div className={styles.status}>
-      <div className={styles.dot}>
+      <div className={`${styles.dot} ${status === 'online' ? styles.online : styles.away}`}>
         <FontAwesomeIcon icon={faCircleDot} />
       </div>
       <div className={styles.description}>
