@@ -21,6 +21,15 @@
       font-style: italic;
     }
   }
+
+  .menu
+  {
+    svg
+    {
+      cursor: pointer;
+      font-size: 1.125rem;
+    }
+  }
 }
 
 @media (max-width: 35.938rem)
