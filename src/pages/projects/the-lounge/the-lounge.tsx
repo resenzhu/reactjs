@@ -251,6 +251,11 @@ const TheLounge = (): JSX.Element =>
     deleteChat(chat);
   };
 
+  const handleToggleUsersSidebar = () =>
+  {
+    console.log('toggle users sidebar');
+  };
+
   const resendMessage = (pendingChat: Chat): void =>
   {
     getToken().then((token): void =>
@@ -791,6 +796,7 @@ const TheLounge = (): JSX.Element =>
           <Header
             title={translate('header.title')}
             subtitle={headerStatus}
+            onclickusers={handleToggleUsersSidebar}
           />
           <div className={styles.body}>
             <Convo>
