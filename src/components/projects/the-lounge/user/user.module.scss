@@ -12,6 +12,7 @@
 
   .status
   {
+    align-items: baseline;
     color: #7B7B7B;
     display: flex;
 
@@ -23,11 +24,13 @@
     .online
     {
       color: #62D936;
+      font-size: 0.75rem;
     }
 
     .away
     {
       color: #FFC146;
+      font-size: 0.75rem;
     }
   }
 }
