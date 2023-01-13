@@ -30,6 +30,13 @@
       "leave": "{{name}} meninggalkan percakapan."
     }
   },
+  "sidebar":
+  {
+    "users":
+    {
+      "you": "Anda"
+    }
+  },
   "sender":
   {
     "message":

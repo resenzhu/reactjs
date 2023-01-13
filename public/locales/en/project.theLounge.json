@@ -30,6 +30,13 @@
       "leave": "{{name}} left the conversation."
     }
   },
+  "sidebar":
+  {
+    "users":
+    {
+      "you": "You"
+    }
+  },
   "sender":
   {
     "message":
