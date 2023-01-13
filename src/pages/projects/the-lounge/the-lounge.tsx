@@ -826,7 +826,7 @@ const TheLounge = (): JSX.Element =>
                     contents.push(info);
                   }
 
-                  contents = contents.sort((first, second) => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
+                  contents = contents.sort((first, second): number => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
 
                   contents.forEach((content, index): void =>
                   {
@@ -905,13 +905,28 @@ const TheLounge = (): JSX.Element =>
             </Convo>
             <Sidebar>
               {
-                users.map((existingUser): JSX.Element[] =>
+                currentToken &&
+                [...users].sort((first, second): number => first.name.localeCompare(second.name)).map((existingUser): JSX.Element[] =>
                 {
                   const elements: JSX.Element[] = [];
 
+                  const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
+
                   if (existingUser.status === 'online' || existingUser.status === 'away')
                   {
-                    elements.push(<Usr name={existingUser.name} status={existingUser.status} />);
+                    const id = existingUser.id;
+
+                    const name = id === userId ? `${existingUser.name} (${translate('sidebar.users.you')})` : existingUser.name;
+
+                    const status = existingUser.status;
+
+                    elements.push(
+                      <Usr
+                        key={id}
+                        name={name}
+                        status={status}
+                      />
+                    );
                   }
 
                   return elements;
