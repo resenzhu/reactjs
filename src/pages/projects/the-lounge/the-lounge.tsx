@@ -140,6 +140,8 @@ const TheLounge = (): JSX.Element =>
 
   const {online} = useLayout();
 
+  const [showUsers, setShowUsers] = useState<boolean>(false);
+
   const usersRef = useRef<User[]>(users);
 
   const disableSender = !online || joining || userMessage.trim().length === 0;
@@ -251,9 +253,12 @@ const TheLounge = (): JSX.Element =>
     deleteChat(chat);
   };
 
-  const handleToggleUsersSidebar = () =>
+  const handleToggleUsersSidebar = (show: boolean): void =>
   {
-    console.log('toggle users sidebar');
+    if (show !== showUsers)
+    {
+      setShowUsers(show);
+    }
   };
 
   const resendMessage = (pendingChat: Chat): void =>
@@ -796,7 +801,7 @@ const TheLounge = (): JSX.Element =>
           <Header
             title={translate('header.title')}
             subtitle={headerStatus}
-            onclickusers={handleToggleUsersSidebar}
+            onclickusers={(): void => handleToggleUsersSidebar(!showUsers)}
           />
           <div className={styles.body}>
             <Convo>
