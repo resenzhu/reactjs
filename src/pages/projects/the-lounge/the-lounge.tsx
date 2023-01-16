@@ -924,11 +924,11 @@ const TheLounge = (): JSX.Element =>
 
                   if (existingUser.status === 'online' || existingUser.status === 'away')
                   {
-                    const id = existingUser.id;
+                    const {id} = existingUser;
 
                     const name = id === userId ? `${existingUser.name} (${translate('sidebar.users.you')})` : existingUser.name;
 
-                    const status = existingUser.status;
+                    const {status} = existingUser;
 
                     elements.push(
                       <Usr
