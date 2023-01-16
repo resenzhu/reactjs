@@ -21,6 +21,17 @@
 
       div[class^='sidebar_sidebar_']
       {
+        .offline
+        {
+          align-items: center;
+          color: #BEBEBE;
+          display: flex;
+          font-weight: 600;
+          height: -webkit-fill-available;
+          justify-content: center;
+          letter-spacing: 0.375rem;
+        }
+
         div[class^='user_user_']
         {
           &:first-of-type

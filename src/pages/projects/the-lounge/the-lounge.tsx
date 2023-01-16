@@ -255,7 +255,7 @@ const TheLounge = (): JSX.Element =>
 
   const handleToggleUsersSidebar = (show: boolean): void =>
   {
-    if (show !== showUsers)
+    if (currentToken && show !== showUsers)
     {
       setShowUsers(show);
     }
@@ -805,10 +805,9 @@ const TheLounge = (): JSX.Element =>
           />
           <div className={styles.body}>
             {
-              !(viewport.width < 576 && showUsers) &&
+              currentToken && !(viewport.width < 576 && showUsers) &&
               <Convo>
                 {
-                  currentToken &&
                   conversations.map((existingConversation): JSX.Element[] =>
                   {
                     const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
@@ -912,37 +911,43 @@ const TheLounge = (): JSX.Element =>
               </Convo>
             }
             {
-              showUsers &&
+              currentToken && showUsers &&
               <Sidebar>
-              {
-                currentToken &&
-                [...users].sort((first, second): number => first.name.localeCompare(second.name)).map((existingUser): JSX.Element[] =>
                 {
-                  const elements: JSX.Element[] = [];
-
-                  const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
-
-                  if (existingUser.status === 'online' || existingUser.status === 'away')
+                  headerStatus === translate('header.subtitle.offline') &&
+                  <div className={styles.offline}>
+                    {translate('sidebar.offline')}
+                  </div>
+                }
+                {
+                  headerStatus !== translate('header.subtitle.offline') && showUsers &&
+                  [...users].sort((first, second): number => first.name.localeCompare(second.name)).map((existingUser): JSX.Element[] =>
                   {
-                    const {id} = existingUser;
+                    const elements: JSX.Element[] = [];
 
-                    const name = id === userId ? `${existingUser.name} (${translate('sidebar.users.you')})` : existingUser.name;
+                    const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
 
-                    const {status} = existingUser;
+                    if (existingUser.status === 'online' || existingUser.status === 'away')
+                    {
+                      const {id} = existingUser;
 
-                    elements.push(
-                      <Usr
-                        key={id}
-                        name={name}
-                        status={status}
-                      />
-                    );
-                  }
+                      const name = id === userId ? `${existingUser.name} (${translate('sidebar.users.you')})` : existingUser.name;
 
-                  return elements;
-                })
-              }
-            </Sidebar>
+                      const {status} = existingUser;
+
+                      elements.push(
+                        <Usr
+                          key={id}
+                          name={name}
+                          status={status}
+                        />
+                      );
+                    }
+
+                    return elements;
+                  })
+                }
+              </Sidebar>
             }
           </div>
           <Sender
