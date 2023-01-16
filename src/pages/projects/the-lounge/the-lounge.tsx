@@ -138,7 +138,7 @@ const TheLounge = (): JSX.Element =>
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  const {online} = useLayout();
+  const {online, viewport} = useLayout();
 
   const [showUsers, setShowUsers] = useState<boolean>(false);
 
@@ -804,110 +804,113 @@ const TheLounge = (): JSX.Element =>
             onclickusers={(): void => handleToggleUsersSidebar(!showUsers)}
           />
           <div className={styles.body}>
-            <Convo>
-              {
-                currentToken &&
-                conversations.map((existingConversation): JSX.Element[] =>
+            {
+              !(viewport.width < 576 && showUsers) &&
+              <Convo>
                 {
-                  const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
-
-                  const elements: JSX.Element[] =
-                  [
-                    <Convo.Info
-                      key={existingConversation.date}
-                      message={DateTime.fromISO(existingConversation.date).toFormat('dd/MM/yyyy')}
-                    />
-                  ];
-
-                  let contents: (Chat | Info)[] = [];
-
-                  for (const chat of existingConversation.chats)
+                  currentToken &&
+                  conversations.map((existingConversation): JSX.Element[] =>
                   {
-                    contents.push(chat);
-                  }
+                    const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
 
-                  for (const info of existingConversation.infos)
-                  {
-                    contents.push(info);
-                  }
+                    const elements: JSX.Element[] =
+                    [
+                      <Convo.Info
+                        key={existingConversation.date}
+                        message={DateTime.fromISO(existingConversation.date).toFormat('dd/MM/yyyy')}
+                      />
+                    ];
 
-                  contents = contents.sort((first, second): number => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
+                    let contents: (Chat | Info)[] = [];
 
-                  contents.forEach((content, index): void =>
-                  {
-                    if ((content as Chat).message)
+                    for (const chat of existingConversation.chats)
                     {
-                      const chat = content as Chat;
-
-                      const {id} = chat;
-
-                      const type = chat.userId === userId ? 'firstPerson' : 'thirdPerson';
-
-                      const header = !(index !== 0 && (contents[index - 1] as Chat).userId === chat.userId && (contents[index - 1] as Chat).message);
-
-                      const username = users.find((existingUser): boolean => existingUser.id === chat.userId)?.name ?? chat.userId;
-
-                      const message = linkifyHtml(chat.message, linkifyHTMLOptions).replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
-
-                      const time = DateTime.fromISO(chat.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
-
-                      const {status} = chat;
-
-                      elements.push(
-                        <Convo.Chat
-                          key={id}
-                          type={type}
-                          header={header}
-                          username={username}
-                          message={message}
-                          time={time}
-                          status={status}
-                          onretry={(): void => handleResendMessage(chat)}
-                          ondelete={(): void => handleDeleteMessage(chat)}
-                        />
-                      );
+                      contents.push(chat);
                     }
-                    else
+
+                    for (const info of existingConversation.infos)
                     {
-                      const info = content as Info;
+                      contents.push(info);
+                    }
 
-                      const {id} = info;
+                    contents = contents.sort((first, second): number => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
 
-                      const username = users.find((existingUser): boolean => existingUser.id === info.userId)?.name ?? info.userId;
-
-                      const time = DateTime.fromISO(info.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
-
-                      let message: string = '';
-
-                      switch (info.activity)
+                    contents.forEach((content, index): void =>
+                    {
+                      if ((content as Chat).message)
                       {
-                        case 'join':
-                          message = info.userId === userId ? translate('conversation.info.join.firstPerson') : translate('conversation.info.join.thirdPerson', {name: username});
-                          break;
+                        const chat = content as Chat;
 
-                        case 'leave':
-                          message = translate('conversation.info.leave', {name: username});
-                          break;
+                        const {id} = chat;
 
-                        default:
-                          message = '';
-                          break;
+                        const type = chat.userId === userId ? 'firstPerson' : 'thirdPerson';
+
+                        const header = !(index !== 0 && (contents[index - 1] as Chat).userId === chat.userId && (contents[index - 1] as Chat).message);
+
+                        const username = users.find((existingUser): boolean => existingUser.id === chat.userId)?.name ?? chat.userId;
+
+                        const message = linkifyHtml(chat.message, linkifyHTMLOptions).replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
+
+                        const time = DateTime.fromISO(chat.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
+
+                        const {status} = chat;
+
+                        elements.push(
+                          <Convo.Chat
+                            key={id}
+                            type={type}
+                            header={header}
+                            username={username}
+                            message={message}
+                            time={time}
+                            status={status}
+                            onretry={(): void => handleResendMessage(chat)}
+                            ondelete={(): void => handleDeleteMessage(chat)}
+                          />
+                        );
                       }
+                      else
+                      {
+                        const info = content as Info;
 
-                      elements.push(
-                        <Convo.Info
-                          key={id}
-                          message={message}
-                          time={time}
-                        />
-                      );
-                    }
-                  });
+                        const {id} = info;
 
-                  return elements;
-                })
-              }
-            </Convo>
+                        const username = users.find((existingUser): boolean => existingUser.id === info.userId)?.name ?? info.userId;
+
+                        const time = DateTime.fromISO(info.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
+
+                        let message: string = '';
+
+                        switch (info.activity)
+                        {
+                          case 'join':
+                            message = info.userId === userId ? translate('conversation.info.join.firstPerson') : translate('conversation.info.join.thirdPerson', {name: username});
+                            break;
+
+                          case 'leave':
+                            message = translate('conversation.info.leave', {name: username});
+                            break;
+
+                          default:
+                            message = '';
+                            break;
+                        }
+
+                        elements.push(
+                          <Convo.Info
+                            key={id}
+                            message={message}
+                            time={time}
+                          />
+                        );
+                      }
+                    });
+
+                    return elements;
+                  })
+                }
+              </Convo>
+            }
             {
               showUsers &&
               <Sidebar>
