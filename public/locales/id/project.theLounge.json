@@ -32,6 +32,7 @@
   },
   "sidebar":
   {
+    "offline": "OFFLINE",
     "users":
     {
       "you": "Anda"
