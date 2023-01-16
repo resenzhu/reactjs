@@ -7,12 +7,12 @@ if (process.env.NODE_ENV === 'production')
 {
   /* eslint-disable */
 
-  console.log = () => {};
-  console.trace = () => {};
-  console.debug = () => {};
-  console.info = () => {};
-  console.warn = () => {};
-  console.error = () => {};
+  console.log = (): void => {};
+  console.trace = (): void => {};
+  console.debug = (): void => {};
+  console.info = (): void => {};
+  console.warn = (): void => {};
+  console.error = (): void => {};
 
   /* eslint-enable */
 }

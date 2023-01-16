@@ -581,8 +581,8 @@ const TheLounge = (): JSX.Element =>
     startOnMount: false,
     startManually: true,
     timeout: 120000,
-    onIdle: () => updateUserStatus('away'),
-    onActive: () => updateUserStatus('online')
+    onIdle: (): void => updateUserStatus('away'),
+    onActive: (): void => updateUserStatus('online')
   });
 
   useEffect((): () => void =>
@@ -862,8 +862,8 @@ const TheLounge = (): JSX.Element =>
                           message={message}
                           time={time}
                           status={status}
-                          onretry={() => handleResendMessage(chat)}
-                          ondelete={() => handleDeleteMessage(chat)}
+                          onretry={(): void => handleResendMessage(chat)}
+                          ondelete={(): void => handleDeleteMessage(chat)}
                         />
                       );
                     }
