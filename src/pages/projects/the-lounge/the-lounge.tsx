@@ -908,7 +908,9 @@ const TheLounge = (): JSX.Element =>
                 })
               }
             </Convo>
-            <Sidebar>
+            {
+              showUsers &&
+              <Sidebar>
               {
                 currentToken &&
                 [...users].sort((first, second): number => first.name.localeCompare(second.name)).map((existingUser): JSX.Element[] =>
@@ -938,6 +940,7 @@ const TheLounge = (): JSX.Element =>
                 })
               }
             </Sidebar>
+            }
           </div>
           <Sender
             placeholder={translate('sender.message.placeholder')}
