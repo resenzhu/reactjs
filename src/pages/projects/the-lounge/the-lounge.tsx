@@ -140,6 +140,10 @@ const TheLounge = (): JSX.Element =>
 
   const {online, viewport} = useLayout();
 
+  const [showInfo, setShowInfo] = useState<boolean>(false);
+
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
   const [showUsers, setShowUsers] = useState<boolean>(false);
 
   const usersRef = useRef<User[]>(users);
@@ -253,10 +257,30 @@ const TheLounge = (): JSX.Element =>
     deleteChat(chat);
   };
 
+  const handleToggleInfoSidebar = (show: boolean): void =>
+  {
+    if (currentToken)
+    {
+      if (show)
+      {
+        setShowUsers(!show);
+      }
+
+      setShowSidebar(show);
+      setShowInfo(show);
+    }
+  };
+
   const handleToggleUsersSidebar = (show: boolean): void =>
   {
-    if (currentToken && show !== showUsers)
+    if (currentToken)
     {
+      if (show)
+      {
+        setShowInfo(!show);
+      }
+
+      setShowSidebar(show);
       setShowUsers(show);
     }
   };
@@ -802,10 +826,11 @@ const TheLounge = (): JSX.Element =>
             title={translate('header.title')}
             subtitle={headerStatus}
             onclickusers={(): void => handleToggleUsersSidebar(!showUsers)}
+            onclickinfo={(): void => handleToggleInfoSidebar(!showInfo)}
           />
           <div className={styles.body}>
             {
-              currentToken && !(viewport.width < 576 && showUsers) &&
+              currentToken && !(viewport.width < 576 && showSidebar) &&
               <Convo>
                 {
                   conversations.map((existingConversation): JSX.Element[] =>
@@ -911,7 +936,7 @@ const TheLounge = (): JSX.Element =>
               </Convo>
             }
             {
-              currentToken && showUsers &&
+              currentToken && showSidebar &&
               <Sidebar>
                 {
                   headerStatus === translate('header.subtitle.offline') &&
@@ -946,6 +971,10 @@ const TheLounge = (): JSX.Element =>
 
                     return elements;
                   })
+                }
+                {
+                  headerStatus !== translate('header.subtitle.offline') && showInfo &&
+                  <div>INFO</div>
                 }
               </Sidebar>
             }
