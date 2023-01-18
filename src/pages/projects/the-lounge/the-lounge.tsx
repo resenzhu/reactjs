@@ -1,6 +1,6 @@
 import {ChangeEvent, HTMLAttributeAnchorTarget, MouseEvent, useEffect, useRef, useState} from 'react';
-import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
 import {Changelog, Conversation as Convo, Header, Sender, Sidebar, User as Usr} from './../../../components/projects/the-lounge/index';
+import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
 import {DateTime} from 'luxon';
 import {Seo} from './../../../components/main';
 import decodeJwt from 'jwt-decode';
