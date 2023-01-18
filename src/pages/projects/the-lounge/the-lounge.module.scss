@@ -44,6 +44,11 @@
             margin-bottom: 0.5rem;
           }
         }
+
+        div[class^='changelog_changelog_']
+        {
+          padding: 1.125rem 0.875rem;
+        }
       }
     }
   }

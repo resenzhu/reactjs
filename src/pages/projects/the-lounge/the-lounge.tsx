@@ -1,6 +1,6 @@
 import {ChangeEvent, HTMLAttributeAnchorTarget, MouseEvent, useEffect, useRef, useState} from 'react';
 import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
-import {Conversation as Convo, Header, Sender, Sidebar, User as Usr} from './../../../components/projects/the-lounge/index';
+import {Changelog, Conversation as Convo, Header, Sender, Sidebar, User as Usr} from './../../../components/projects/the-lounge/index';
 import {DateTime} from 'luxon';
 import {Seo} from './../../../components/main';
 import decodeJwt from 'jwt-decode';
@@ -973,8 +973,29 @@ const TheLounge = (): JSX.Element =>
                   })
                 }
                 {
-                  headerStatus !== translate('header.subtitle.offline') && showInfo &&
-                  <div>INFO</div>
+                  showInfo &&
+                  <Changelog>
+                    <Changelog.Update version={translate('sidebar.changelog.20220118.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220118.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220116.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220116.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220106.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220106.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220104.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220104.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                  </Changelog>
                 }
               </Sidebar>
             }
