@@ -30,6 +30,37 @@
       "leave": "{{name}} meninggalkan percakapan."
     }
   },
+  "sidebar":
+  {
+    "offline": "OFFLINE",
+    "users":
+    {
+      "you": "Anda"
+    },
+    "changelog":
+    {
+      "20220118":
+      {
+        "00": "2022-01-18",
+        "01": "Menambahkan menu Info untuk menampilkan changelog."
+      },
+      "20220116":
+      {
+        "00": "2022-01-16",
+        "01": "Menambahkan menu Users untuk menampilkan daftar user yang sedang online."
+      },
+      "20220106":
+      {
+        "00": "2022-01-06",
+        "01": "Teks URL di dalam chat akan secara otomatis dikonversi menjadi link."
+      },
+      "20220104":
+      {
+        "00": "2022-01-04",
+        "01": "Rilis pertama."
+      }
+    }
+  },
   "sender":
   {
     "message":

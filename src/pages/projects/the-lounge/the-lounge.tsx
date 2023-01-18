@@ -1,6 +1,6 @@
 import {ChangeEvent, HTMLAttributeAnchorTarget, MouseEvent, useEffect, useRef, useState} from 'react';
+import {Changelog, Conversation as Convo, Header, Sender, Sidebar, User as Usr} from './../../../components/projects/the-lounge/index';
 import {Chat, Conversation, Info, Token, User} from './../../../redux/reducers/projects/the-lounge.types';
-import {Conversation as Convo, Header, Sender} from './../../../components/projects/the-lounge/index';
 import {DateTime} from 'luxon';
 import {Seo} from './../../../components/main';
 import decodeJwt from 'jwt-decode';
@@ -138,7 +138,13 @@ const TheLounge = (): JSX.Element =>
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  const {online} = useLayout();
+  const {online, viewport} = useLayout();
+
+  const [showInfo, setShowInfo] = useState<boolean>(false);
+
+  const [showSidebar, setShowSidebar] = useState<boolean>(false);
+
+  const [showUsers, setShowUsers] = useState<boolean>(false);
 
   const usersRef = useRef<User[]>(users);
 
@@ -249,6 +255,34 @@ const TheLounge = (): JSX.Element =>
   const handleDeleteMessage = (chat: Chat): void =>
   {
     deleteChat(chat);
+  };
+
+  const handleToggleInfoSidebar = (show: boolean): void =>
+  {
+    if (currentToken)
+    {
+      if (show)
+      {
+        setShowUsers(!show);
+      }
+
+      setShowSidebar(show);
+      setShowInfo(show);
+    }
+  };
+
+  const handleToggleUsersSidebar = (show: boolean): void =>
+  {
+    if (currentToken)
+    {
+      if (show)
+      {
+        setShowInfo(!show);
+      }
+
+      setShowSidebar(show);
+      setShowUsers(show);
+    }
   };
 
   const resendMessage = (pendingChat: Chat): void =>
@@ -571,8 +605,8 @@ const TheLounge = (): JSX.Element =>
     startOnMount: false,
     startManually: true,
     timeout: 120000,
-    onIdle: () => updateUserStatus('away'),
-    onActive: () => updateUserStatus('online')
+    onIdle: (): void => updateUserStatus('away'),
+    onActive: (): void => updateUserStatus('online')
   });
 
   useEffect((): () => void =>
@@ -791,111 +825,181 @@ const TheLounge = (): JSX.Element =>
           <Header
             title={translate('header.title')}
             subtitle={headerStatus}
+            onclickusers={(): void => handleToggleUsersSidebar(!showUsers)}
+            onclickinfo={(): void => handleToggleInfoSidebar(!showInfo)}
           />
-          <Convo>
+          <div className={styles.body}>
             {
-              currentToken &&
-              conversations.map((existingConversation): JSX.Element[] =>
-              {
-                const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
-
-                const elements =
-                [
-                  <Convo.Info
-                    key={existingConversation.date}
-                    message={DateTime.fromISO(existingConversation.date).toFormat('dd/MM/yyyy')}
-                  />
-                ];
-
-                let contents: (Chat | Info)[] = [];
-
-                for (const chat of existingConversation.chats)
+              currentToken && !(viewport.width < 576 && showSidebar) &&
+              <Convo>
                 {
-                  contents.push(chat);
-                }
-
-                for (const info of existingConversation.infos)
-                {
-                  contents.push(info);
-                }
-
-                contents = contents.sort((first, second) => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
-
-                contents.forEach((content, index): void =>
-                {
-                  if ((content as Chat).message)
+                  conversations.map((existingConversation): JSX.Element[] =>
                   {
-                    const chat = content as Chat;
+                    const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
 
-                    const {id} = chat;
-
-                    const type = chat.userId === userId ? 'firstPerson' : 'thirdPerson';
-
-                    const header = !(index !== 0 && (contents[index - 1] as Chat).userId === chat.userId && (contents[index - 1] as Chat).message);
-
-                    const username = users.find((existingUser): boolean => existingUser.id === chat.userId)?.name ?? chat.userId;
-
-                    const message = linkifyHtml(chat.message, linkifyHTMLOptions).replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
-
-                    const time = DateTime.fromISO(chat.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
-
-                    const {status} = chat;
-
-                    elements.push(
-                      <Convo.Chat
-                        key={id}
-                        type={type}
-                        header={header}
-                        username={username}
-                        message={message}
-                        time={time}
-                        status={status}
-                        onretry={() => handleResendMessage(chat)}
-                        ondelete={() => handleDeleteMessage(chat)}
+                    const elements: JSX.Element[] =
+                    [
+                      <Convo.Info
+                        key={existingConversation.date}
+                        message={DateTime.fromISO(existingConversation.date).toFormat('dd/MM/yyyy')}
                       />
-                    );
-                  }
-                  else
-                  {
-                    const info = content as Info;
+                    ];
 
-                    const {id} = info;
+                    let contents: (Chat | Info)[] = [];
 
-                    const username = users.find((existingUser): boolean => existingUser.id === info.userId)?.name ?? info.userId;
-
-                    const time = DateTime.fromISO(info.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
-
-                    let message: string = '';
-
-                    switch (info.activity)
+                    for (const chat of existingConversation.chats)
                     {
-                      case 'join':
-                        message = info.userId === userId ? translate('conversation.info.join.firstPerson') : translate('conversation.info.join.thirdPerson', {name: username});
-                        break;
-
-                      case 'leave':
-                        message = translate('conversation.info.leave', {name: username});
-                        break;
-
-                      default:
-                        message = '';
-                        break;
+                      contents.push(chat);
                     }
 
-                    elements.push(
-                      <Convo.Info
-                        key={id}
-                        message={message}
-                        time={time}
-                      />
-                    );
-                  }
-                });
+                    for (const info of existingConversation.infos)
+                    {
+                      contents.push(info);
+                    }
 
-                return elements;
-              })
+                    contents = contents.sort((first, second): number => DateTime.fromISO(first.timestamp).toMillis() - DateTime.fromISO(second.timestamp).toMillis());
+
+                    contents.forEach((content, index): void =>
+                    {
+                      if ((content as Chat).message)
+                      {
+                        const chat = content as Chat;
+
+                        const {id} = chat;
+
+                        const type = chat.userId === userId ? 'firstPerson' : 'thirdPerson';
+
+                        const header = !(index !== 0 && (contents[index - 1] as Chat).userId === chat.userId && (contents[index - 1] as Chat).message);
+
+                        const username = users.find((existingUser): boolean => existingUser.id === chat.userId)?.name ?? chat.userId;
+
+                        const message = linkifyHtml(chat.message, linkifyHTMLOptions).replaceAll('\\n', '\n').replaceAll(/\*([^*]*)\*/gu, '<b>$1</b>').replaceAll(/_([^_]*)_/gu, '<i>$1</i>').replaceAll(/~([^~]*)~/gu, '<s>$1</s>');
+
+                        const time = DateTime.fromISO(chat.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
+
+                        const {status} = chat;
+
+                        elements.push(
+                          <Convo.Chat
+                            key={id}
+                            type={type}
+                            header={header}
+                            username={username}
+                            message={message}
+                            time={time}
+                            status={status}
+                            onretry={(): void => handleResendMessage(chat)}
+                            ondelete={(): void => handleDeleteMessage(chat)}
+                          />
+                        );
+                      }
+                      else
+                      {
+                        const info = content as Info;
+
+                        const {id} = info;
+
+                        const username = users.find((existingUser): boolean => existingUser.id === info.userId)?.name ?? info.userId;
+
+                        const time = DateTime.fromISO(info.timestamp).toLocal().toLocaleString(DateTime.TIME_SIMPLE);
+
+                        let message: string = '';
+
+                        switch (info.activity)
+                        {
+                          case 'join':
+                            message = info.userId === userId ? translate('conversation.info.join.firstPerson') : translate('conversation.info.join.thirdPerson', {name: username});
+                            break;
+
+                          case 'leave':
+                            message = translate('conversation.info.leave', {name: username});
+                            break;
+
+                          default:
+                            message = '';
+                            break;
+                        }
+
+                        elements.push(
+                          <Convo.Info
+                            key={id}
+                            message={message}
+                            time={time}
+                          />
+                        );
+                      }
+                    });
+
+                    return elements;
+                  })
+                }
+              </Convo>
             }
-          </Convo>
+            {
+              currentToken && showSidebar &&
+              <Sidebar>
+                {
+                  headerStatus === translate('header.subtitle.offline') &&
+                  <div className={styles.offline}>
+                    {translate('sidebar.offline')}
+                  </div>
+                }
+                {
+                  headerStatus !== translate('header.subtitle.offline') && showUsers &&
+                  [...users].sort((first, second): number => first.name.localeCompare(second.name)).map((existingUser): JSX.Element[] =>
+                  {
+                    const elements: JSX.Element[] = [];
+
+                    const userId = (decodeJwt(currentToken) as IntDecodedToken).id;
+
+                    if (existingUser.status === 'online' || existingUser.status === 'away')
+                    {
+                      const {id} = existingUser;
+
+                      const name = id === userId ? `${existingUser.name} (${translate('sidebar.users.you')})` : existingUser.name;
+
+                      const {status} = existingUser;
+
+                      elements.push(
+                        <Usr
+                          key={id}
+                          name={name}
+                          status={status}
+                        />
+                      );
+                    }
+
+                    return elements;
+                  })
+                }
+                {
+                  showInfo &&
+                  <Changelog>
+                    <Changelog.Update version={translate('sidebar.changelog.20220118.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220118.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220116.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220116.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220106.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220106.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                    <Changelog.Update version={translate('sidebar.changelog.20220104.00')}>
+                      <Changelog.Log>
+                        {translate('sidebar.changelog.20220104.01')}
+                      </Changelog.Log>
+                    </Changelog.Update>
+                  </Changelog>
+                }
+              </Sidebar>
+            }
+          </div>
           <Sender
             placeholder={translate('sender.message.placeholder')}
             value={userMessage}
