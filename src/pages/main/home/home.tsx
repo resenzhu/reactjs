@@ -529,7 +529,7 @@ const Home = (): JSX.Element =>
   },
   []);
 
-  useEffect(() =>
+  useEffect((): void =>
   {
     if (loading)
     {
