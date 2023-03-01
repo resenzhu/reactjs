@@ -1,3 +1,4 @@
 // TODO the-lounge: add chat menu (notifications, search, profile).
-// TODO the-lounge: add chat features (ellipsis, mention, url parsing, reaction, unread messages info, send images/attachments/recordings).
+// TODO the-lounge: add chat features (ellipsis, mention, reaction, unread messages info, send images/attachments/recordings).
+// TODO jigsaw: add main menu (singleplayer, multiplayer, changelog).
 // TODO ideas: calculator, converter, formatter, validator, games.
