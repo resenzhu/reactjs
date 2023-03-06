@@ -13,9 +13,11 @@ const Jigsaw = (): JSX.Element =>
         title={translate('seo.title')}
         description={translate('seo.description')}
       />
-      <div className={styles.mainmenu}>
-        <div className={styles.background}></div>
-        <div className={styles.content}></div>
+      <div className={styles.app}>
+        <div className={styles.titlescreen}>
+          <div className={styles.background}></div>
+          <div className={styles.content}></div>
+        </div>
       </div>
     </>
   );
