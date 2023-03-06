@@ -14,6 +14,7 @@ const Jigsaw = (): JSX.Element =>
         description={translate('seo.description')}
       />
       <div className={styles.mainmenu}>
+        <div className={styles.background}></div>
         <div className={styles.content}></div>
       </div>
     </>

@@ -2,14 +2,29 @@
 {
   padding-top: 3.75rem;
 
+  .background,
   .content
   {
-    background-image: url('./../../../assets/images/projects/jigsaw/main-menu.webp');
+    height: calc(100vh - 3.75rem);
+    position: absolute;
+    width: 100%;
+  }
+
+  .background
+  {
+    background-image: linear-gradient(rgba(181, 169, 69, 0.2), rgba(181, 169, 69, 0.2)), url('./../../../assets/images/projects/jigsaw/main-menu.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: blur(0.125rem);
+  }
+
+  .content
+  {
+    align-items: center;
+    display: flex;
     height: calc(100vh - 3.75rem);
-    width: 100%;
+    justify-content: center;
   }
 }
 
