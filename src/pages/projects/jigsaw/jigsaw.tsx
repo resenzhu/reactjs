@@ -16,7 +16,11 @@ const Jigsaw = (): JSX.Element =>
       <div className={styles.app}>
         <div className={styles.titlescreen}>
           <div className={styles.background}></div>
-          <div className={styles.content}></div>
+          <div className={styles.content}>
+            <div className={styles.title}>
+              {translate('screenTitle.title')}
+            </div>
+          </div>
         </div>
       </div>
     </>

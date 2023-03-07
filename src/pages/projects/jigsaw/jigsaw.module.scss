@@ -1,29 +1,37 @@
-.mainmenu
+.app
 {
   padding-top: 3.75rem;
 
-  .background,
-  .content
+  .titlescreen
   {
-    height: calc(100vh - 3.75rem);
-    position: absolute;
-    width: 100%;
-  }
+    .background,
+    .content
+    {
+      height: calc(100vh - 3.75rem);
+      position: absolute;
+      width: 100%;
+    }
 
-  .background
-  {
-    background-image: linear-gradient(rgba(189, 176, 54, 0.2), rgba(189, 176, 54, 0.2)), url('./../../../assets/images/projects/jigsaw/main-menu.webp');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+    .background
+    {
+      background-image: linear-gradient(rgba(189, 176, 54, 0.2), rgba(189, 176, 54, 0.2)), url('./../../../assets/images/projects/jigsaw/title-screen.webp');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-  .content
-  {
-    align-items: center;
-    display: flex;
-    height: calc(100vh - 3.75rem);
-    justify-content: center;
+    .content
+    {
+      align-items: center;
+      display: flex;
+      height: calc(100vh - 3.75rem);
+      justify-content: center;
+
+      .title
+      {
+        font-family: 'Nabla', cursive;
+      }
+    }
   }
 }
 
