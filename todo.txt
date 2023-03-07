@@ -1,4 +1,5 @@
 // TODO the-lounge: add chat menu (notifications, search, profile).
 // TODO the-lounge: add chat features (ellipsis, mention, reaction, unread messages info, send images/attachments/recordings).
-// TODO jigsaw: add main menu (singleplayer -> settings (default casual) -> play, multiplayer -> settings (default casual) + participant list -> play, changelog).
+// TODO jigsaw: add main menu (play, changelog).
+// TODO jigsaw: add more game modes.
 // TODO ideas: calculator, converter, formatter, validator, games.
