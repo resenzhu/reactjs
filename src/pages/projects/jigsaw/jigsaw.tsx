@@ -1,4 +1,5 @@
 import 'react-jigsaw-puzzle/lib/jigsaw-puzzle.css';
+import {Button} from './../../../components/projects/jigsaw/index';
 import {Seo} from './../../../components/main';
 import styles from './jigsaw.module.scss';
 import {useTranslation} from './../../../hooks/main';
@@ -19,6 +20,14 @@ const Jigsaw = (): JSX.Element =>
           <div className={styles.content}>
             <div className={styles.title}>
               {translate('screenTitle.title')}
+            </div>
+            <div className={styles.menu}>
+              <Button onclick={() => {alert(translate('screenTitle.menu.play'))}}>
+                {translate('screenTitle.menu.play')}
+              </Button>
+              <Button onclick={() => {alert(translate('screenTitle.menu.changelog'))}}>
+                {translate('screenTitle.menu.changelog')}
+              </Button>
             </div>
           </div>
         </div>
