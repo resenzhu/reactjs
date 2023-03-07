@@ -6,6 +6,11 @@
   },
   "screenTitle":
   {
-    "title": "JIGSAW"
+    "title": "JIGSAW",
+    "menu":
+    {
+      "play": "PLAY",
+      "changelog": "CHANGELOG"
+    }
   }
 }
