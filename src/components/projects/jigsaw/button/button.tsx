@@ -3,14 +3,16 @@ import styles from './button.module.scss';
 
 type Button =
 {
+  type: 'button' | 'submit' | 'reset',
   children: ReactNode,
   onclick: MouseEventHandler<HTMLButtonElement>
 };
 
-const Button = ({children, onclick}: Button): JSX.Element =>
+const Button = ({type, children, onclick}: Button): JSX.Element =>
 (
   <button
     className={styles.button}
+    type={type}
     onClick={onclick}
   >
     {children}

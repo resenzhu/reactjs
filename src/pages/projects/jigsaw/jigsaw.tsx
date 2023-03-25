@@ -22,10 +22,16 @@ const Jigsaw = (): JSX.Element =>
               {translate('screenTitle.title')}
             </div>
             <div className={styles.menu}>
-              <Button onclick={() => {alert(translate('screenTitle.menu.play'))}}>
+              <Button
+                type='button'
+                onclick={() => {alert(translate('screenTitle.menu.play'))}}
+              >
                 {translate('screenTitle.menu.play')}
               </Button>
-              <Button onclick={() => {alert(translate('screenTitle.menu.changelog'))}}>
+              <Button
+                type='button'
+                onclick={() => {alert(translate('screenTitle.menu.changelog'))}}
+              >
                 {translate('screenTitle.menu.changelog')}
               </Button>
             </div>
