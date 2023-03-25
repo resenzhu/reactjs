@@ -1,6 +1,17 @@
 .button
 {
-  background-color: white;
+  background-color: #FE970C;
+  border: #FCE4A6 3px solid;
+  border-radius: 10px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 4px 8px;
+
+  &:active
+  {
+    background-color: #F74101;
+  }
 }
 
 @media (max-width: 35.938rem) {}
