@@ -1,3 +1,4 @@
+// FIXME the-lounge: fix incorrect changelog date (year).
 // TODO the-lounge: add chat menu (notifications, search, profile).
 // TODO the-lounge: add chat features (ellipsis, mention, reaction, unread messages info, send images/attachments/recordings).
 // TODO jigsaw: add main menu (play, changelog).
