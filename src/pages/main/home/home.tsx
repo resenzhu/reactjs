@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import {AnimatePresence, motion} from 'framer-motion';
 import {Button, Form, Headline, Project, Seo, Social} from './../../../components/main';
 import {ChangeEvent, MouseEvent, useEffect, useState} from 'react';
-import {IconDefinition, faArrowUp, faComments, faEnvelope, faPuzzlePiece} from '@fortawesome/free-solid-svg-icons';
+import {IconDefinition, faArrowUp, faComments, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faGithub, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons';
 import {useHome, useLayout, useTranslation} from './../../../hooks/main';
 import {ContactForm} from './../../../redux/reducers/main/home.types';
@@ -13,7 +13,6 @@ import {Message} from 'yup';
 import {Trans} from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 import {generateRandomInt} from './../../../utils/number';
-import jigsawImage from './../../../assets/images/main/home/jigsaw.webp';
 import {mainSocket} from './../../../utils/socket';
 import profileImage from './../../../assets/images/main/home/profile.webp';
 import {scrollToElement} from './../../../utils/element';
@@ -239,11 +238,6 @@ const Home = (): JSX.Element =>
 
   const projects: Projects =
   [
-    {
-      key: 'jigsaw',
-      background: jigsawImage,
-      icon: faPuzzlePiece
-    },
     {
       key: 'theLounge',
       background: theLoungeImage,
