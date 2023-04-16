@@ -975,24 +975,24 @@ const TheLounge = (): JSX.Element =>
                 {
                   showInfo &&
                   <Changelog>
-                    <Changelog.Update version={translate('sidebar.changelog.20220118.00')}>
+                    <Changelog.Update version={translate('sidebar.changelog.20230118.00')}>
                       <Changelog.Log>
-                        {translate('sidebar.changelog.20220118.01')}
+                        {translate('sidebar.changelog.20230118.01')}
                       </Changelog.Log>
                     </Changelog.Update>
-                    <Changelog.Update version={translate('sidebar.changelog.20220116.00')}>
+                    <Changelog.Update version={translate('sidebar.changelog.20230116.00')}>
                       <Changelog.Log>
-                        {translate('sidebar.changelog.20220116.01')}
+                        {translate('sidebar.changelog.20230116.01')}
                       </Changelog.Log>
                     </Changelog.Update>
-                    <Changelog.Update version={translate('sidebar.changelog.20220106.00')}>
+                    <Changelog.Update version={translate('sidebar.changelog.20230106.00')}>
                       <Changelog.Log>
-                        {translate('sidebar.changelog.20220106.01')}
+                        {translate('sidebar.changelog.20230106.01')}
                       </Changelog.Log>
                     </Changelog.Update>
-                    <Changelog.Update version={translate('sidebar.changelog.20220104.00')}>
+                    <Changelog.Update version={translate('sidebar.changelog.20230104.00')}>
                       <Changelog.Log>
-                        {translate('sidebar.changelog.20220104.01')}
+                        {translate('sidebar.changelog.20230104.01')}
                       </Changelog.Log>
                     </Changelog.Update>
                   </Changelog>
