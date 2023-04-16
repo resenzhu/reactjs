@@ -397,7 +397,7 @@ const TheLounge = (): JSX.Element =>
         id: nanoid(),
         userId: (decodeJwt(token) as IntDecodedToken).id,
         message: message,
-        timestamp: DateTime.utc().toISO(),
+        timestamp: DateTime.utc().toISO() ?? new Date(Date.now()).toISOString(),
         status: 'sending'
       };
 
