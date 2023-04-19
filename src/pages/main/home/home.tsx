@@ -9,7 +9,7 @@ import {ContactForm} from './../../../redux/reducers/main/home.types';
 import {DateTime} from 'luxon';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {HashLink} from 'react-router-hash-link';
-import {Message} from 'yup/lib/types';
+import {Message} from 'yup';
 import {Trans} from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 import {generateRandomInt} from './../../../utils/number';
@@ -529,7 +529,7 @@ const Home = (): JSX.Element =>
   },
   []);
 
-  useEffect(() =>
+  useEffect((): void =>
   {
     if (loading)
     {
