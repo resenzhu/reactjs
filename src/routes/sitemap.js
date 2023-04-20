@@ -5,7 +5,6 @@ import React from 'react';
 
 const Routes = (
   <ReactRoutes>
-    <Route path='/project/jigsaw' />
     <Route path='/project/the-lounge' />
   </ReactRoutes>
 );
