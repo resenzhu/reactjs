@@ -18,8 +18,7 @@
     "netlify:status": "netlify status",
     "netlify:dev": "kill-port 3000 4000 && netlify dev",
     "netlify:build": "netlify build",
-    "netlify:deploy:uat": "netlify deploy",
-    "netlify:deploy:prod": "netlify deploy --prod"
+    "netlify:deploy": "netlify deploy --prod"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
