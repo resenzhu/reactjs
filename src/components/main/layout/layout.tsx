@@ -116,7 +116,7 @@ const Layout = ({children}: Layout): JSX.Element =>
     {
       if (window.location.href.includes('#'))
       {
-        history.pushState('', document.title, `${window.location.pathname}${window.location.search}`);
+        history.pushState({}, document.title, `${window.location.pathname}${window.location.search}`);
       }
 
       if (viewport.width !== window.innerWidth || viewport.height !== window.innerHeight)
