@@ -43,7 +43,6 @@ body
 #root > #preloader > img
 {
   animation: preloader 4s linear infinite;
-  width: 7.5rem;
 }
 
 @keyframes preloader
@@ -59,18 +58,181 @@ body
   }
 }
 
-@media (max-width: 35.938rem)
+/* 320 */
+@media (max-width: 20.063rem)
 {
   ::-webkit-scrollbar
   {
     width: 0.75rem;
   }
+
+  #root > #preloader > img
+  {
+    width: 6rem;
+  }
 }
 
-@media (min-width: 36rem) and (max-width: 47.938rem) {}
+/* 360 */
+@media (min-width: 20.063rem) and (max-width: 22.563rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
 
-@media (min-width: 48rem) and (max-width: 61.938rem) {}
+  #root > #preloader > img
+  {
+    width: 6.75rem;
+  }
+}
 
-@media (min-width: 62rem) and (max-width: 74.938rem) {}
+/* 375 */
+@media (min-width: 22.563rem) and (max-width: 23.5rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
 
-@media (min-width: 75rem) {}
+  #root > #preloader > img
+  {
+    width: 6.875rem;
+  }
+}
+
+/* 390 */
+@media (min-width: 23.5rem) and (max-width: 24.438rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
+
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 393 */
+@media (min-width: 24.438rem) and (max-width: 24.625rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
+
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 414 */
+@media (min-width: 24.625rem) and (max-width: 25.938rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
+
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 428 */
+@media (min-width: 25.938rem) and (max-width: 26.813rem)
+{
+  ::-webkit-scrollbar
+  {
+    width: 0.75rem;
+  }
+
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 768 */
+@media (min-width: 26.813rem) and (max-width: 48.063rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 800 */
+@media (min-width: 48.063rem) and (max-width: 50.063rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 820 */
+@media (min-width: 50.063rem) and (max-width: 51.313rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 834 */
+@media (min-width: 51.313rem) and (max-width: 52.188rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 884 */
+@media (min-width: 52.188rem) and (max-width: 55.313rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 1114 */
+@media (min-width: 55.313rem) and (max-width: 69.688rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 1280 */
+@media (min-width: 69.688rem) and (max-width: 80.063rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 1440 */
+@media (min-width: 80.063rem) and (max-width: 90.063rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
+
+/* 1440+ */
+@media (min-width: 90.063rem)
+{
+  #root > #preloader > img
+  {
+    width: 7.125rem;
+  }
+}
