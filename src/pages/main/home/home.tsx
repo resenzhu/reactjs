@@ -601,29 +601,9 @@ const Home = (): JSX.Element =>
   {
     let size: number = 0;
 
-    if (viewport.width < 576)
+    if (viewport.width <= 320)
     {
-      size = 120;
-    }
-
-    if (viewport.width >= 576 && viewport.width < 768)
-    {
-      size = 130;
-    }
-
-    if (viewport.width >= 768 && viewport.width < 992)
-    {
-      size = 140;
-    }
-
-    if (viewport.width >= 992 && viewport.width < 1200)
-    {
-      size = 150;
-    }
-
-    if (viewport.width >= 1200)
-    {
-      size = 160;
+      size = 100;
     }
 
     if (size !== profileImageSize)
