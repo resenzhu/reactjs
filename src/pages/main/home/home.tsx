@@ -289,7 +289,7 @@ const Home = (): JSX.Element =>
 
   const handleScrollToSection = (el: HTMLElement): void =>
   {
-    scrollToElement(el);
+    scrollToElement(el, 0);
   };
 
   const handleScrollToTop = (): void =>
