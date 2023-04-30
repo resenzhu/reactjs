@@ -133,7 +133,7 @@ const Navbar = (): JSX.Element =>
 
   const handleScrollToSection = (el: HTMLElement): void =>
   {
-    scrollToElement(el);
+    scrollToElement(el, 0);
   };
 
   const handleToggleLanguageDropdown = (show: boolean): void =>
