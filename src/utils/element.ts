@@ -5,7 +5,7 @@ export const handleBlurOnFocus = (event: FocusEvent<HTMLElement>): void =>
   event.target.blur();
 };
 
-export const scrollToElement = (element: HTMLElement, offset: number = 60): void =>
+export const scrollToElement = (element: HTMLElement, offset: number): void =>
 {
   window.scroll(
   {
