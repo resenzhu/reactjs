@@ -2,6 +2,7 @@
 {
   color: #525355;
   display: inline-block;
+  font-size: 1.25rem;
   font-weight: 600;
   padding-bottom: 0.75rem;
   position: relative;
@@ -14,45 +15,5 @@
     left: 25%;
     position: absolute;
     width: 50%;
-  }
-}
-
-@media (max-width: 35.938rem)
-{
-  .headline
-  {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 36rem) and (max-width: 47.938rem)
-{
-  .headline
-  {
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 48rem) and (max-width: 61.938rem)
-{
-  .headline
-  {
-    font-size: 1.75rem;
-  }
-}
-
-@media (min-width: 62rem) and (max-width: 74.938rem)
-{
-  .headline
-  {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 75rem)
-{
-  .headline
-  {
-    font-size: 2.25rem;
   }
 }
