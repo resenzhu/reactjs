@@ -2,18 +2,21 @@
 {
   display: flex;
   flex-direction: column;
+  font-size: 0.875rem;
 }
 
 .error
 {
   background-color: #CB4242;
   color: #FFFFFF;
+  padding: 0.5rem;
 }
 
 .success
 {
   background-color: #408140;
   color: #FFFFFF;
+  padding: 0.5rem;
 }
 
 .input,
@@ -23,6 +26,7 @@
   border: #E3E3E3 0.063rem solid;
   caret-color: #333333;
   color: #333333;
+  padding: 0.5rem;
 
   &:focus
   {
@@ -42,7 +46,7 @@
 
   &::-webkit-scrollbar
   {
-    width: 0.75rem
+    width: 0.5rem
   }
 
   &::-webkit-scrollbar-track
