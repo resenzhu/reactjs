@@ -2,9 +2,8 @@
 {
   background-color: #3778C2;
   color: #F6F6F6;
-  display: inline-block;
   font-size: 1.25rem;
-  padding: 0.938rem;
+  padding: 0.875rem;
   text-align: center;
   transition: 0.2s;
 
@@ -13,13 +12,3 @@
     background-color: #366DAC;
   }
 }
-
-@media (max-width: 35.938rem) {}
-
-@media (min-width: 36rem) and (max-width: 47.938rem) {}
-
-@media (min-width: 48rem) and (max-width: 61.938rem) {}
-
-@media (min-width: 62rem) and (max-width: 74.938rem) {}
-
-@media (min-width: 75rem) {}
