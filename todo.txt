@@ -1,5 +1,4 @@
 // FIXME the-lounge: fix firefox 404 not found page.
-// TODO all: overhaul styles.
+// TODO the-lounge: update mobile styles.
 // TODO the-lounge: add chat menu (notifications, search, profile).
 // TODO the-lounge: add chat features (ellipsis, mention, reaction, unread messages info, send images/attachments/recordings).
-// TODO ideas: calculator, converter, formatter, validator, games.
