@@ -9,14 +9,14 @@
 {
   background-color: #CB4242;
   color: #FFFFFF;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .success
 {
   background-color: #408140;
   color: #FFFFFF;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 }
 
 .input,
@@ -26,11 +26,11 @@
   border: #E3E3E3 0.063rem solid;
   caret-color: #333333;
   color: #333333;
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
 
   &:focus
   {
-    outline: none;
+    outline: #3778C2 0.125rem solid;
   }
 
   &::placeholder
