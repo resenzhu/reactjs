@@ -8,5 +8,3 @@ const socketManager = new Manager(process.env.REACT_APP_SERVER_SOCKET,
 });
 
 export const mainSocket = socketManager.socket('/main');
-
-export const theLoungeSocket = socketManager.socket('/the-lounge');
