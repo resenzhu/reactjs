@@ -124,14 +124,14 @@
       {
         background-color: #3A414E;
         border: none;
-        border-radius: 0.625rem;
         caret-color: #BABEC4;
         color: #DADDE3;
         margin-bottom: 1rem;
+        padding: 0.5rem 0.625rem;
 
         &:focus
         {
-          outline-color: #DADDE3;
+          border: #DADDE3 0.125rem solid;
         }
 
         &::placeholder
@@ -155,6 +155,7 @@
       {
         border-radius: 0.625rem;
         margin-bottom: 1rem;
+        padding: 0.5rem 0.625rem;
       }
     }
   }
@@ -168,7 +169,7 @@
   flex-direction: column;
   height: 10rem;
   justify-content: space-between;
-  padding-bottom: 0.875rem;
+  padding-bottom: 1rem;
 
   .scrollback
   {
