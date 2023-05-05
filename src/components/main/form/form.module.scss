@@ -5,32 +5,36 @@
   font-size: 0.875rem;
 }
 
+.error,
+.success
+{
+  color: #FFFFFF;
+  padding: 0.5rem;
+}
+
 .error
 {
   background-color: #CB4242;
-  color: #FFFFFF;
-  padding: 0.5rem 0.75rem;
 }
 
 .success
 {
   background-color: #408140;
-  color: #FFFFFF;
-  padding: 0.5rem 0.75rem;
 }
 
 .input,
 .textarea
 {
   background-color: #FFFFFF;
-  border: #E3E3E3 0.063rem solid;
+  border: #CACACA 0.063rem solid;
   caret-color: #333333;
   color: #333333;
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
 
   &:focus
   {
-    outline: #3778C2 0.125rem solid;
+    border: #3778C2 0.125rem solid;
+    outline: none;
   }
 
   &::placeholder
