@@ -20,11 +20,6 @@ const generateSitemap = () =>
         url.priority = 1.0;
         break;
 
-      case '/project/the-lounge':
-        url.changefreq = 'weekly';
-        url.priority = 0.7;
-        break;
-
       default:
         url.changefreq = 'monthly';
         url.priority = 0.3;
