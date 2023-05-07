@@ -2,7 +2,7 @@
   "seo":
   {
     "title": "Resen | Full Stack Developer",
-    "description": "Pengembang full stack berpengalaman lebih dari 5 tahun dalam pengembangan perangkat lunak khususnya web menggunakan ReactJS, NodeJS, dan lainnya."
+    "description": "Selamat datang di situs web pribadi saya, di mana saya menampilkan keahlian saya dalam pengembangan web React melalui berbagai proyek inovatif."
   },
   "hero":
   {
@@ -22,7 +22,7 @@
       "theLounge":
       {
         "name": "THE LOUNGE",
-        "slogan": "Tempat Ngobrol Santai"
+        "slogan": "Ruang Ngobrol Santai"
       }
     }
   },

@@ -2,7 +2,7 @@
   "seo":
   {
     "title": "Resen | Full Stack Developer",
-    "description": "Experienced full stack developer with over 5 years of expertise in web development using ReactJS, NodeJS, NextJS, and other technologies."
+    "description": "Welcome to my personal website, where I showcase my expertise in React web development through a range of innovative projects."
   },
   "hero":
   {
@@ -22,7 +22,7 @@
       "theLounge":
       {
         "name": "THE LOUNGE",
-        "slogan": "A Place to Talk"
+        "slogan": "Casual Chat Room"
       }
     }
   },
