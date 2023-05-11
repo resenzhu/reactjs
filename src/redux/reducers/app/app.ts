@@ -1,4 +1,4 @@
-import {Language, Online, Ready, Viewport} from './layout.types';
+import {Language, Online, Ready, Viewport} from './app.types';
 import {PayloadAction, createSlice} from '@reduxjs/toolkit';
 
 type State =
@@ -17,7 +17,7 @@ type Reducers =
   setLanguage: (state: State, action: PayloadAction<Language>) => void
 };
 
-const name: string = 'layout';
+const name: string = 'app';
 
 const initialState: State =
 {
