@@ -4,7 +4,7 @@ import 'normalize.css/normalize.css';
 import {StrictMode, Suspense} from 'react';
 import {BrowserRouter} from 'react-router-dom';
 import {HelmetProvider} from 'react-helmet-async';
-import {Layout} from './components/main';
+import {App as Layout} from './layouts';
 import {PersistGate} from 'redux-persist/integration/react';
 import {Provider} from 'react-redux';
 import Routes from './routes';
