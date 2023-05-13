@@ -1,4 +1,4 @@
-import preloaderImage from './../../../assets/main/images/layout.preloader.webp';
+import preloaderImage from './../../../assets/app/images/app.preloader.webp';
 import styles from './preloader.module.scss';
 
 const Preloader = (): JSX.Element =>

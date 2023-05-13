@@ -1,6 +1,6 @@
 import {AnimatePresence, motion} from 'framer-motion';
-import {useEffect, useRef, useState} from 'react';
 import {useApp, useTranslation} from './../../../hooks/app';
+import {useEffect, useRef, useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {HashLink} from 'react-router-hash-link';
 import {Language} from './../../../redux/reducers/app/app.types';

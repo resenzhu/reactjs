@@ -143,12 +143,9 @@ const App = ({children}: App): JSX.Element =>
 
       setLoading(false);
     }
-    else
+    else if (viewport.width !== 0 && viewport.height !== 0)
     {
-      if (viewport.width !== 0 && viewport.height !== 0)
-      {
-        setReady(true);
-      }
+      setReady(true);
     }
   },
   [loading]);
