@@ -1,23 +1,25 @@
 import * as yup from 'yup';
 import {AnimatePresence, motion} from 'framer-motion';
-import {Button, Form, Headline, Project, Seo, Social} from './../../../components/main';
+import {Button, Form, Headline, Project, Social} from './../../../components/main';
 import {ChangeEvent, MouseEvent, useEffect, useState} from 'react';
 import {IconDefinition, faArrowUp, faComments, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faGithub, faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import {useHome, useLayout, useTranslation} from './../../../hooks/main';
+import {useApp, useTranslation} from './../../../hooks/app';
 import {ContactForm} from './../../../redux/reducers/main/home.types';
 import {DateTime} from 'luxon';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {HashLink} from 'react-router-hash-link';
 import {Message} from 'yup';
+import {Seo} from './../../../components/app';
 import {Trans} from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 import {generateRandomInt} from './../../../utils/number';
 import {mainSocket} from './../../../utils/socket';
-import profileImage from './../../../assets/images/main/home/profile.webp';
+import profileImage from './../../../assets/main/images/home.profile.webp';
 import {scrollToElement} from './../../../utils/element';
 import styles from './home.module.scss';
-import theLoungeImage from './../../../assets/images/main/home/the-lounge.webp';
+import theLoungeImage from './../../../assets/main/images/home.the-lounge.webp';
+import {useHome} from './../../../hooks/main';
 import validator from 'validator';
 
 type TypewriterOptions =
@@ -159,7 +161,7 @@ const Home = (): JSX.Element =>
 
   const [contactFormReady, setContactFormReady] = useState<boolean>(false);
 
-  const {language, online, viewport} = useLayout();
+  const {language, online, viewport} = useApp();
 
   const [loading, setLoading] = useState<boolean>(false);
 

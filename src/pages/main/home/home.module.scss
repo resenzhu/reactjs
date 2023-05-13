@@ -6,7 +6,7 @@
   .content
   {
     align-items: center;
-    background-image: linear-gradient(rgba(36, 40, 51, 0.8), rgba(36, 40, 51, 0.8)), url('./../../../assets/images/main/home/hero.webp');
+    background-image: linear-gradient(rgba(36, 40, 51, 0.8), rgba(36, 40, 51, 0.8)), url('./../../../assets/main/images/home.hero.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -153,7 +153,6 @@
       div[class^='form_error_'],
       div[class^='form_success_']
       {
-        border-radius: 0.625rem;
         margin-bottom: 1rem;
         padding: 0.5rem 0.625rem;
       }
