@@ -127,11 +127,13 @@
         caret-color: #BABEC4;
         color: #DADDE3;
         margin-bottom: 1rem;
+        outline: none;
         padding: 0.5rem 0.625rem;
+        transition: 0.2s;
 
         &:focus
         {
-          border: #DADDE3 0.125rem solid;
+          outline: #DADDE3 0.125rem solid;
         }
 
         &::placeholder
