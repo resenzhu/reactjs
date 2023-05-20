@@ -14,6 +14,7 @@ import {Seo} from './../../../components/app';
 import {Trans} from 'react-i18next';
 import Typewriter from 'typewriter-effect';
 import {generateRandomInt} from './../../../utils/number';
+import {isMobile} from 'react-device-detect';
 import {mainSocket} from './../../../utils/socket';
 import profileImage from './../../../assets/main/images/home.profile.webp';
 import {scrollToElement} from './../../../utils/element';
@@ -291,7 +292,23 @@ const Home = (): JSX.Element =>
 
   const handleScrollToSection = (el: HTMLElement): void =>
   {
-    scrollToElement(el, 0);
+    let offset: number = 50;
+
+    if (isMobile && window.scrollY === 0)
+    {
+      switch (el.id)
+      {
+        case 'projects':
+          offset = -22;
+          break;
+
+        default:
+          offset = 50;
+          break;
+      }
+    }
+
+    scrollToElement(el, offset);
   };
 
   const handleScrollToTop = (): void =>
