@@ -7,6 +7,7 @@ import {Language} from './../../../redux/reducers/app/app.types';
 import ReactCountryFlag from 'react-country-flag';
 import brandImage from './../../../assets/main/images/navbar.brand.webp';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {isMobile} from 'react-device-detect';
 import {scrollToElement} from './../../../utils/element';
 import styles from './navbar.module.scss';
 
@@ -135,16 +136,16 @@ const Navbar = (): JSX.Element =>
   {
     let offset: number = 50;
 
-    if (window.scrollY === 0)
+    if (isMobile && window.scrollY === 0)
     {
       switch (el.id)
       {
         case 'projects':
-          offset = -21;
+          offset = -22;
           break;
 
         case 'contact':
-          offset = -59;
+          offset = -60;
           break;
 
         default:
