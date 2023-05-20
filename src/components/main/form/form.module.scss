@@ -29,12 +29,13 @@
   border: #CACACA 0.063rem solid;
   caret-color: #333333;
   color: #333333;
+  outline: none;
   padding: 0.5rem;
 
   &:focus
   {
-    border: #3778C2 0.125rem solid;
-    outline: none;
+    border-color: transparent;
+    outline: #3778C2 0.125rem solid;
   }
 
   &::placeholder
