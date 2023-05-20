@@ -133,7 +133,27 @@ const Navbar = (): JSX.Element =>
 
   const handleScrollToSection = (el: HTMLElement): void =>
   {
-    scrollToElement(el, 0);
+    let offset: number = 50;
+
+    if (window.scrollY === 0)
+    {
+      switch (el.id)
+      {
+        case 'projects':
+          offset = -21;
+          break;
+
+        case 'contact':
+          offset = -59;
+          break;
+
+        default:
+          offset = 50;
+          break;
+      }
+    }
+
+    scrollToElement(el, offset);
   };
 
   const handleToggleLanguageDropdown = (show: boolean): void =>
