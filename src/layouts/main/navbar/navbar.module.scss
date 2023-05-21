@@ -146,9 +146,25 @@
         .list
         {
           font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.6));
-          margin-right: calc(25vw + ((4.0625vw - 0.813rem) * 2.8));
-          margin-top: calc(7.875rem + (4.0625vw - 0.813rem));
+          margin-right: calc(25vw + ((25vw - 5rem) * 0.5));
+          margin-top: calc(7.875rem + ((39.375vw - 7.875rem) * 0.1));
           width: 38.75vw;
+        }
+      }
+
+      .menu
+      {
+        .list
+        {
+          .item
+          {
+            a
+            {
+              font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.2));
+              padding-bottom: calc(3.75vw + ((3.75vw - 0.75rem) * 0.1));
+              padding-top: calc(3.75vw + ((3.75vw - 0.75rem) * 0.1));
+            }
+          }
         }
       }
     }
