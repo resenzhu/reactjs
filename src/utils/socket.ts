@@ -1,6 +1,6 @@
 import {Manager} from 'socket.io-client';
 
-const socketManager = new Manager(process.env.REACT_APP_SERVER_SOCKET,
+const socketManager = new Manager(process.env.REACT_APP_BACKEND,
 {
   autoConnect: false,
   transports: ['websocket', 'polling'],
