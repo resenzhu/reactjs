@@ -20,7 +20,6 @@
   command = "npm run react:start"
   targetPort = 3000
   port = 4000
-  envFiles = [".env"]
   autoLaunch = true
   [dev.https]
     certFile = "certs/localhost.crt"
