@@ -268,7 +268,7 @@ const Navbar = (): JSX.Element =>
         </div>
         <div className={styles.menu}>
           {
-            viewport.width < 576 &&
+            viewport.width < 480 &&
             <div
               className={styles.toggler}
               onClick={(): void => handleToggleMenuDropdown(!showMenus)}
@@ -278,7 +278,7 @@ const Navbar = (): JSX.Element =>
           }
           <AnimatePresence>
             {
-              ((viewport.width < 576 && showMenus) || viewport.width >= 576) &&
+              ((viewport.width < 480 && showMenus) || viewport.width >= 480) &&
               <motion.div
                 className={styles.list}
                 ref={menuDropdown}

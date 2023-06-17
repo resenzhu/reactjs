@@ -18,7 +18,9 @@
     a
     {
       align-items: center;
+      color: #333333;
       display: flex;
+      text-decoration: none;
 
       img
       {
@@ -28,6 +30,8 @@
       span
       {
         display: none;
+        font-weight: 600;
+        margin-left: 0.5rem;
       }
     }
   }
@@ -145,9 +149,9 @@
       {
         .list
         {
-          font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.6));
+          font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.841));
           margin-right: calc(25vw + ((25vw - 5rem) * 0.5));
-          margin-top: calc(7.875rem + ((39.375vw - 7.875rem) * 0.1));
+          margin-top: calc(7.875rem + ((39.375vw - 7.875rem) * 0.05));
           width: 38.75vw;
         }
       }
@@ -160,9 +164,9 @@
           {
             a
             {
-              font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.2));
-              padding-bottom: calc(3.75vw + ((3.75vw - 0.75rem) * 0.1));
-              padding-top: calc(3.75vw + ((3.75vw - 0.75rem) * 0.1));
+              font-size: calc(4.0625vw - ((4.0625vw - 0.813rem) * 0.527));
+              padding-bottom: calc(3.75vw + ((3.75vw - 0.75rem) * -0.5));
+              padding-top: calc(3.75vw + ((3.75vw - 0.75rem) * -0.5));
             }
           }
         }
@@ -172,10 +176,90 @@
 }
 
 /* 480+ */
-@media only screen and (min-width: 30rem) {}
+@media only screen and (min-width: 30rem)
+{
+  .navbar
+  {
+    .brand
+    {
+      a
+      {
+        span
+        {
+          display: initial;
+        }
+      }
+    }
+
+    .nav
+    {
+      width: calc(61.4583vw - ((61.4583vw - 18.438rem) * 0.75));
+
+      .language
+      {
+        .list
+        {
+          font-size: 0.875rem;
+          margin-right: 8.5rem;
+          margin-top: 8rem;
+          width: 11.25rem;
+        }
+      }
+
+      .menu
+      {
+        .list
+        {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0;
+          position: initial;
+          width: calc(47.9166vw - ((47.9166vw - 14.375rem) * 0.8));
+
+          .item
+          {
+            border-top: none;
+            width: initial;
+
+            &:last-of-type
+            {
+              border-bottom: none;
+            }
+
+            a
+            {
+              font-size: 1rem;
+              font-weight: 600;
+              padding: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 /* 768+ */
-@media only screen and (min-width: 48rem) {}
+@media only screen and (min-width: 48rem)
+{
+  .navbar
+  {
+    padding: 0 3rem;
+
+    .nav
+    {
+      width: 21.25rem;
+
+      .menu
+      {
+        .list
+        {
+          width: 16.25rem;
+        }
+      }
+    }
+  }
+}
 
 /* 1024+ */
 @media only screen and (min-width: 64rem) {}
